@@ -32,7 +32,7 @@ public class ProductEntity {
     private BigDecimal price;
 
     @Column(name = "inStock")
-    private boolean inStock;
+    private int inStock;
 
     @Column(name = "description")
     private String description;
@@ -40,16 +40,14 @@ public class ProductEntity {
     @Column(name = "comment")
     private String comment;
 
+    @OneToMany
+
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "category_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Category category;
-//
-//    @OneToMany(mappedBy = "productEntity")
-//    Set<OrderLineEntity> product;
 
-    //    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "orderLine_id", referencedColumnName = "id")
-//    private OrderLineEntity orderLineEntity;
+    @OneToMany(mappedBy="productEntity")
+    private Set<Image> images;
 }

@@ -1,26 +1,36 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Customer;
+import com.example.demo.entity.ProductEntity;
 import com.example.demo.responsitory.CustomerReponsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CustomerService {
 
     @Autowired
     CustomerReponsitory customerRepo;
+//    public List<Customer> getTopProduct(){
+//        List<Customer> customers = new ArrayList<>();
+//        customers = customerRepo.c();
+//
+//        return customers;
+//    }
 
-    public ServiceResult findAll(){
-        ServiceResult result = new ServiceResult();
-        result.setData(customerRepo.findAll());
-        return result;
+    public List<Customer> findAll(){
+
+        List<Customer> customers = customerRepo.findAll();
+        return customers;
     }
-    public ServiceResult findById(long id){
+    public Customer findById(long id){
         ServiceResult result = new ServiceResult();
         Customer customer = customerRepo.findById(id).orElse(null);
-        result.setData(customer);
-        return result;
+
+        return customer;
     }
     public ServiceResult create(Customer customer) {
         ServiceResult result = new ServiceResult();

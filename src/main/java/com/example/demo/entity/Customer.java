@@ -30,6 +30,7 @@ public class Customer {
     @Column(name = "phone")
     private String phone;
     private String avatar;
+
     @Column(name = "role",nullable = false)
     private String role="USER";
 

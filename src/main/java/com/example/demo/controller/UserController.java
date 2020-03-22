@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private CustomerService customerService;
-    /* ---------------- GET ALL CUSTOMER ------------------------ */
-    @GetMapping("/customers")
-    public ResponseEntity<ServiceResult> findAllCustomer() {
-        return new ResponseEntity<ServiceResult>(customerService.findAll(), HttpStatus.OK);
-    }
-    /* ---------------- GET CUSTOMER BY ID ------------------------ */
-    @GetMapping("/customers/{id}")
-    public ResponseEntity<ServiceResult> findById(@PathVariable int id) {
-        return new ResponseEntity<ServiceResult>(customerService.findById(id), HttpStatus.OK);
-    }
-    /* ---------------- CREATE NEW CUSTOMER ------------------------ */
+//    /* ---------------- GET ALL CUSTOMER ------------------------ */
+//    @GetMapping("/customers")
+//    public ResponseEntity<ServiceResult> findAllCustomer() {
+//        return new ResponseEntity<ServiceResult>(customerService.findAll(), HttpStatus.OK);
+//    }
+//    /* ---------------- GET CUSTOMER BY ID ------------------------ */
+//    @GetMapping("/customers/{id}")
+//    public ResponseEntity<ServiceResult> findById(@PathVariable int id) {
+//        return new ResponseEntity<ServiceResult>(customerService.findById(id), HttpStatus.OK);
+//    }
+//    /* ---------------- CREATE NEW CUSTOMER ------------------------ */
     @PostMapping("/customers")
     public ResponseEntity<ServiceResult> create(@RequestBody Customer customer) {
         return new ResponseEntity<ServiceResult>(customerService.create(customer), HttpStatus.OK);
