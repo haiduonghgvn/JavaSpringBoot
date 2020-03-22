@@ -24,13 +24,6 @@ public class IndexController {
     @Autowired
     CustomerService customerService;
 
-    @GetMapping(value = "/store")
-    public ModelAndView home() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("fiveProduct", productService.getTopProduct());
-        modelAndView.setViewName("indexStore");
-        return modelAndView;
-    }
 
 
     @GetMapping(value = {"/customer"})

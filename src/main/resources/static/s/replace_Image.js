@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
 
     $('.black-button').on({
         'click': function(){
-            $('#change-image').attr('src','/images/photo-long-2.jpg').;
+            $('#change-image').attr('src','/images/photo-long-2.jpg');
         }
     });
 
