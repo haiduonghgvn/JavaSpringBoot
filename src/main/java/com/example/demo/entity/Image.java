@@ -16,7 +16,7 @@ public class Image {
     @Column(name = "url",columnDefinition = "text")
     private String url;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="product_id", nullable=false)
     private ProductEntity productEntity;
 

@@ -22,7 +22,7 @@ public class ShoppingCartController {
     @Autowired
     private ProductService productService;
 
-    //    Get Information
+    //    Get Information Product
     @RequestMapping(value = "/detail")
     public String detailProduct(Model model, @RequestParam("id") Long id, HttpSession httpSession) {
         model.addAttribute("productDetail", productService.findById(id));

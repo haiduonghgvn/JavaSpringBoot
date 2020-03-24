@@ -25,7 +25,6 @@ public class IndexController {
     CustomerService customerService;
 
 
-
     @GetMapping(value = {"/customer"})
     public String postCustomerAll(Model model) {
         List<Customer> c = (List<Customer>) customerService.findAll();

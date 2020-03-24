@@ -76,7 +76,7 @@
                                                 </div>
 
                                                 <div class="header-account-username">
-                                                    <h4><<span sec:authentication="name"></span> </h4>
+                                                    <h4><<span sec:authentication="name"></span></h4>
                                                 </div>
 
                                                 <ul>
@@ -85,9 +85,9 @@
                                                     <li><a href="#">Account Infomation</a>
                                                     </li>
 
-                                                        <form action="#" th:action="@{/logout}" method="POST">
-                                                            <li><a type="submit" href="#">Logout</a>
-                                                        </form>
+                                                    <form action="#" th:action="@{/logout}" method="POST">
+                                                        <li><a type="submit" href="#">Logout</a>
+                                                    </form>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1139,7 +1139,6 @@
         </section>
         <!-- /section -->
 
-
         <section>
             <div class="container">
 
@@ -1149,7 +1148,7 @@
                             <div class="awe-media home-cate-media">
                                 <div class="awe-media-header">
                                     <div class="awe-media-image">
-                                        <img src="./img/samples/collections/index-1/clothing.jpg" alt="">
+                                        <img src="/img/samples/collections/index-1/clothing.jpg" alt="">
                                     </div>
                                     <!-- /.awe-media-image -->
 
@@ -1180,1278 +1179,1280 @@
                         <div class="col-md-9 col-sm-8">
                             <div class="products owl-carousel" data-items="3">
 
-                                <th:block th:each="list : ${fiveProduct}">
+                                <!--Product Item Row 1 Start-->
+                                <th:block th:each="item : ${fiveProduct}">
                                     <div class="product product-grid">
                                         <div class="product-media">
                                             <div class="product-thumbnail">
-                                                <a th:href="@{/detail(id=${list.id})}" title="">
-                                                    <img th:text="${#strings.listImage[1]}" alt=""/>
+<!--                                                <div th:each="img,index :${item.listImage}">-->
+                                                    <a th:href="@{/detail(id=${item.id})}" title="">
+
+                                                        <img th:src="@{${item.listImage[0].url}}" class="current"/>
+                                                        <!--                                                <img src="images/samples/products/index/clothing/1.jpg" alt="" class="current">-->
+                                                        <!--                                                <img src="./images/samples/products/index/clothing/2.jpg" alt="">-->
+                                                    </a>
+<!--                                                </div>-->
+                                            </div>
+                                            <!-- /.product-thumbnail -->
+
+
+                                            <div class="product-hover">
+                                                <div class="product-actions">
+                                                    <a href="#" class="awe-button product-add-cart"
+                                                       data-toggle="tooltip" title="Add to cart">
+                                                        <i class="icon icon-shopping-bag"></i>
+                                                    </a>
+
+                                                    <a href="#" class="awe-button product-quick-whistlist"
+                                                       data-toggle="tooltip" title="Add to whistlist">
+                                                        <i class="icon icon-star"></i>
+                                                    </a>
+
+                                                    <a href="product-quick-view.html"
+                                                       class="awe-button product-quick-view" data-toggle="tooltip"
+                                                       title="Quickview">
+                                                        <i class="icon icon-eye"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- /.product-hover -->
+
+
+                                        </div>
+                                        <!-- /.product-media -->
+
+                                        <div class="product-body">
+                                            <h2 class="product-name">
+                                                <a href="#" title="Gin Lane Greenport Cotton Shirt" th:text="${item.description}"></a>
+                                            </h2>
+                                            <!-- /.product-product -->
+
+                                            <div class="product-category">
+                                                <span th:text="${item.name}"></span>
+                                            </div>
+                                            <!-- /.product-category -->
+
+                                            <div class="product-price">
+
+                                                <span class="amount" th:text="${item.price}"></span>
+
+                                            </div>
+                                            <!-- /.product-price -->
+                                        </div>
+                                        <!-- /.product-body -->
+                                    </div>
+                                    <!-- /.productItem Row 1 -->
+                                </th:block>
+
+
+                            </div>
+                            <!-- ./products -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-md-push-9 col-sm-push-8">
+                            <div class="awe-media home-cate-media">
+                                <div class="awe-media-header">
+                                    <div class="awe-media-image">
+                                        <img src="./img/samples/collections/index-1/shoes.jpg" alt="">
+                                    </div>
+                                    <!-- /.awe-media-image -->
+
+                                    <div class="awe-media-overlay overlay-dark-50 fullpage">
+                                        <div class="content">
+
+                                            <div class="fp-table text-left">
+                                                <div class="fp-table-cell">
+
+                                                    <h2 class="upper">Shoes</h2>
+                                                    <p class="margin-bottom-50">At vero eos et accusamus et iusto odio
+                                                        dignissimosmus voluptatum deleniti corrupti quos dolores</p>
+                                                    <a href="#" class="btn btn-sm btn-outline btn-white">View All</a>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.awe-media-overlay -->
+                                </div>
+                                <!-- /.awe-media-header -->
+                            </div>
+                            <!-- /.awe-media -->
+                        </div>
+
+                        <div class="col-md-9 col-sm-8 col-md-pull-3 col-sm-pull-4">
+                            <div class="products owl-carousel" data-items="3">
+
+
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/shoes/1.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
+
+
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
+
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
+
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
                                                 </a>
                                             </div>
                                         </div>
+                                        <!-- /.product-hover -->
+
+
                                     </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
+                                                Cotton Shirt</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Short</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$80</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
+
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/shoes/2.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
+
+
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
+
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
+
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /.product-hover -->
+
+
+                                    </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge
+                                                Navy/White</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Shirt</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$50</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
+
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/shoes/3.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
+
+
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
+
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
+
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /.product-hover -->
+
+
+                                    </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
+                                                Cotton Shirt</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Shirt</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$60</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
+
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/shoes/4.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
+
+
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
+
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
+
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /.product-hover -->
+
+
+                                    </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
+                                                Cotton Shirt</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Shirt</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$50</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
 
                             </div>
-                            </span>
+                            <!-- ./products -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
 
-                            </a>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                            <div class="awe-media home-cate-media">
+                                <div class="awe-media-header">
+                                    <div class="awe-media-image">
+                                        <img src="./img/samples/collections/index-1/accessories.jpg" alt="">
+                                    </div>
+                                    <!-- /.awe-media-image -->
+
+                                    <div class="awe-media-overlay overlay-dark-50 fullpage">
+                                        <div class="content">
+
+                                            <div class="fp-table text-left">
+                                                <div class="fp-table-cell">
+
+                                                    <h2 class="upper">Accessories</h2>
+                                                    <p class="margin-bottom-50">At vero eos et accusamus et iusto
+                                                        odiovoluptatum deleniti corrupti quos dolores</p>
+                                                    <a href="#" class="btn btn-sm btn-outline btn-white">View All</a>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- /.awe-media-overlay -->
+                                </div>
+                                <!-- /.awe-media-header -->
+                            </div>
+                            <!-- /.awe-media -->
+                        </div>
+
+                        <div class="col-md-9 col-sm-8">
+                            <div class="products owl-carousel" data-items="3">
 
 
-                            <!-- /.product-thumbnail -->
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/accessories/1.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
 
 
-                            <div class="product-hover">
-                                <div class="product-actions">
-                                    <a href="#" class="awe-button product-add-cart"
-                                       data-toggle="tooltip" title="Add to cart">
-                                        <i class="icon icon-shopping-bag"></i>
-                                    </a>
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
 
-                                    <a href="#" class="awe-button product-quick-whistlist"
-                                       data-toggle="tooltip" title="Add to whistlist">
-                                        <i class="icon icon-star"></i>
-                                    </a>
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
 
-                                    <a href="product-quick-view.html"
-                                       class="awe-button product-quick-view" data-toggle="tooltip"
-                                       title="Quickview">
-                                        <i class="icon icon-eye"></i>
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /.product-hover -->
+
+
+                                    </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
+                                                Cotton Shirt</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Short</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$80</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
+
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/accessories/2.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
+
+
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
+
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
+
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /.product-hover -->
+
+
+                                    </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge
+                                                Navy/White</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Shirt</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$50</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
+
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/accessories/3.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
+
+
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
+
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
+
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /.product-hover -->
+
+
+                                    </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
+                                                Cotton Shirt</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Shirt</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$60</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
+
+                                <div class="product product-grid">
+                                    <div class="product-media">
+                                        <div class="product-thumbnail">
+                                            <a href="product-fullwidth.html" title="">
+                                                <img src="./img/samples/products/index/accessories/4.jpg" alt=""
+                                                     class="current">
+                                                <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <!-- /.product-thumbnail -->
+
+
+                                        <div class="product-hover">
+                                            <div class="product-actions">
+                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                                   title="Add to cart">
+                                                    <i class="icon icon-shopping-bag"></i>
+                                                </a>
+
+                                                <a href="#" class="awe-button product-quick-whistlist"
+                                                   data-toggle="tooltip" title="Add to whistlist">
+                                                    <i class="icon icon-star"></i>
+                                                </a>
+
+                                                <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                                   data-toggle="tooltip" title="Quickview">
+                                                    <i class="icon icon-eye"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- /.product-hover -->
+
+
+                                    </div>
+                                    <!-- /.product-media -->
+
+                                    <div class="product-body">
+                                        <h2 class="product-name">
+                                            <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
+                                                Cotton Shirt</a>
+                                        </h2>
+                                        <!-- /.product-product -->
+
+                                        <div class="product-category">
+                                            <span>Shirt</span>
+                                        </div>
+                                        <!-- /.product-category -->
+
+                                        <div class="product-price">
+
+                                            <span class="amount">$50</span>
+
+                                        </div>
+                                        <!-- /.product-price -->
+                                    </div>
+                                    <!-- /.product-body -->
+                                </div>
+                                <!-- /.product -->
+
+
+                            </div>
+                            <!-- ./products -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.home-products -->
+
+            </div>
+            <!-- /.container -->
+        </section>
+        <!-- /.home-products -->
+
+    </div>
+    <!-- /.container -->
+    </section>
+    <!-- /section -->
+
+    <div class="container">
+        <div class="divider"></div>
+    </div>
+
+
+    <div class="container">
+        <div class="divider"></div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="padding-vertical-50">
+
+                <div class="arrivals">
+                    <div class="section-header center">
+                        <h2>New Arrivals</h2>
+                    </div>
+                    <!-- /.section-header -->
+
+                    <div class="products home-products owl-carousel" data-items="4">
+
+
+                        <div class="product product-grid">
+                            <div class="product-media">
+                                <div class="product-thumbnail">
+                                    <a href="product-fullwidth.html" title="">
+                                        <img src="./img/samples/products/index/arrivals/1.jpg" alt=""
+                                             class="current">
+                                        <img src="./img/samples/products/index/clothing/2.jpg" alt="">
                                     </a>
                                 </div>
+                                <!-- /.product-thumbnail -->
+
+
+                                <div class="product-hover">
+                                    <div class="product-actions">
+                                        <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                           title="Add to cart">
+                                            <i class="icon icon-shopping-bag"></i>
+                                        </a>
+
+                                        <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
+                                           title="Add to whistlist">
+                                            <i class="icon icon-star"></i>
+                                        </a>
+
+                                        <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                           data-toggle="tooltip" title="Quickview">
+                                            <i class="icon icon-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /.product-hover -->
+
+
                             </div>
-                            <!-- /.product-hover -->
+                            <!-- /.product-media -->
 
+                            <div class="product-body">
+                                <h2 class="product-name">
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
+                                        Shirt</a>
+                                </h2>
+                                <!-- /.product-product -->
 
+                                <div class="product-category">
+                                    <span>Short</span>
+                                </div>
+                                <!-- /.product-category -->
+
+                                <div class="product-price">
+
+                                    <span class="amount">$80</span>
+
+                                </div>
+                                <!-- /.product-price -->
+                            </div>
+                            <!-- /.product-body -->
                         </div>
-                        <!-- /.product-media -->
+                        <!-- /.product -->
 
-                        <div class="product-body">
-                            <h2 class="product-name">
-                                <!--                                    <a href="#" title="Gin Lane Greenport Cotton Shirt" th:text="${list.name}"></a>-->
-                            </h2>
-                            <!-- /.product-product -->
 
-                            <div class="product-category">
-                                <span th:text="${list.comment}"></span>
+                        <div class="product product-grid">
+                            <div class="product-media">
+                                <div class="product-thumbnail">
+                                    <a href="product-fullwidth.html" title="">
+                                        <img src="./img/samples/products/index/arrivals/2.jpg" alt=""
+                                             class="current">
+                                        <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!-- /.product-thumbnail -->
+
+
+                                <div class="product-hover">
+                                    <div class="product-actions">
+                                        <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                           title="Add to cart">
+                                            <i class="icon icon-shopping-bag"></i>
+                                        </a>
+
+                                        <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
+                                           title="Add to whistlist">
+                                            <i class="icon icon-star"></i>
+                                        </a>
+
+                                        <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                           data-toggle="tooltip" title="Quickview">
+                                            <i class="icon icon-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /.product-hover -->
+
+
                             </div>
-                            <!-- /.product-category -->
+                            <!-- /.product-media -->
 
-                            <div class="product-price">
+                            <div class="product-body">
+                                <h2 class="product-name">
+                                    <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge Navy/White</a>
+                                </h2>
+                                <!-- /.product-product -->
 
-                                <span class="amount" th:text="${list.price}"></span>
+                                <div class="product-category">
+                                    <span>Shirt</span>
+                                </div>
+                                <!-- /.product-category -->
 
+                                <div class="product-price">
+
+                                    <span class="amount">$50</span>
+
+                                </div>
+                                <!-- /.product-price -->
                             </div>
-                            <!-- /.product-price -->
+                            <!-- /.product-body -->
                         </div>
-                        <!-- /.product-body -->
+                        <!-- /.product -->
+
+
+                        <div class="product product-grid">
+                            <div class="product-media">
+                                <div class="product-thumbnail">
+                                    <a href="product-fullwidth.html" title="">
+                                        <img src="./img/samples/products/index/arrivals/3.jpg" alt=""
+                                             class="current">
+                                        <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!-- /.product-thumbnail -->
+
+
+                                <div class="product-hover">
+                                    <div class="product-actions">
+                                        <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                           title="Add to cart">
+                                            <i class="icon icon-shopping-bag"></i>
+                                        </a>
+
+                                        <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
+                                           title="Add to whistlist">
+                                            <i class="icon icon-star"></i>
+                                        </a>
+
+                                        <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                           data-toggle="tooltip" title="Quickview">
+                                            <i class="icon icon-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /.product-hover -->
+
+
+                            </div>
+                            <!-- /.product-media -->
+
+                            <div class="product-body">
+                                <h2 class="product-name">
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
+                                        Shirt</a>
+                                </h2>
+                                <!-- /.product-product -->
+
+                                <div class="product-category">
+                                    <span>Shirt</span>
+                                </div>
+                                <!-- /.product-category -->
+
+                                <div class="product-price">
+
+                                    <span class="amount">$60</span>
+
+                                </div>
+                                <!-- /.product-price -->
+                            </div>
+                            <!-- /.product-body -->
+                        </div>
+                        <!-- /.product -->
+
+
+                        <div class="product product-grid">
+                            <div class="product-media">
+                                <div class="product-thumbnail">
+                                    <a href="product-fullwidth.html" title="">
+                                        <img src="./img/samples/products/index/arrivals/4.jpg" alt=""
+                                             class="current">
+                                        <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!-- /.product-thumbnail -->
+
+
+                                <div class="product-hover">
+                                    <div class="product-actions">
+                                        <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                           title="Add to cart">
+                                            <i class="icon icon-shopping-bag"></i>
+                                        </a>
+
+                                        <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
+                                           title="Add to whistlist">
+                                            <i class="icon icon-star"></i>
+                                        </a>
+
+                                        <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                           data-toggle="tooltip" title="Quickview">
+                                            <i class="icon icon-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /.product-hover -->
+
+
+                            </div>
+                            <!-- /.product-media -->
+
+                            <div class="product-body">
+                                <h2 class="product-name">
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
+                                        Shirt</a>
+                                </h2>
+                                <!-- /.product-product -->
+
+                                <div class="product-category">
+                                    <span>Shirt</span>
+                                </div>
+                                <!-- /.product-category -->
+
+                                <div class="product-price">
+
+                                    <span class="amount">$50</span>
+
+                                </div>
+                                <!-- /.product-price -->
+                            </div>
+                            <!-- /.product-body -->
+                        </div>
+                        <!-- /.product -->
+
+
+                        <div class="product product-grid">
+                            <div class="product-media">
+                                <div class="product-thumbnail">
+                                    <a href="product-fullwidth.html" title="">
+                                        <img src="./img/samples/products/index/arrivals/5.jpg" alt=""
+                                             class="current">
+                                        <img src="./img/samples/products/index/clothing/2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!-- /.product-thumbnail -->
+
+
+                                <div class="product-hover">
+                                    <div class="product-actions">
+                                        <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
+                                           title="Add to cart">
+                                            <i class="icon icon-shopping-bag"></i>
+                                        </a>
+
+                                        <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
+                                           title="Add to whistlist">
+                                            <i class="icon icon-star"></i>
+                                        </a>
+
+                                        <a href="product-quick-view.html" class="awe-button product-quick-view"
+                                           data-toggle="tooltip" title="Quickview">
+                                            <i class="icon icon-eye"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /.product-hover -->
+
+
+                            </div>
+                            <!-- /.product-media -->
+
+                            <div class="product-body">
+                                <h2 class="product-name">
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
+                                        Shirt</a>
+                                </h2>
+                                <!-- /.product-product -->
+
+                                <div class="product-category">
+                                    <span>Shirt</span>
+                                </div>
+                                <!-- /.product-category -->
+
+                                <div class="product-price">
+
+                                    <span class="amount">$50</span>
+
+                                </div>
+                                <!-- /.product-price -->
+                            </div>
+                            <!-- /.product-body -->
+                        </div>
+                        <!-- /.product -->
+
+
                     </div>
-                    <!-- /.product -->
+                    <!-- /.products -->
                 </div>
-                </th:block>
+                <!-- /.arrivals -->
 
             </div>
-            <!-- ./products -->
-    </div>
-</div>
-<!-- /.row -->
-
-<div class="row">
-    <div class="col-md-3 col-sm-4 col-md-push-9 col-sm-push-8">
-        <div class="awe-media home-cate-media">
-            <div class="awe-media-header">
-                <div class="awe-media-image">
-                    <img src="./img/samples/collections/index-1/shoes.jpg" alt="">
-                </div>
-                <!-- /.awe-media-image -->
-
-                <div class="awe-media-overlay overlay-dark-50 fullpage">
-                    <div class="content">
-
-                        <div class="fp-table text-left">
-                            <div class="fp-table-cell">
-
-                                <h2 class="upper">Shoes</h2>
-                                <p class="margin-bottom-50">At vero eos et accusamus et iusto odio
-                                    dignissimosmus voluptatum deleniti corrupti quos dolores</p>
-                                <a href="#" class="btn btn-sm btn-outline btn-white">View All</a>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.awe-media-overlay -->
-            </div>
-            <!-- /.awe-media-header -->
         </div>
-        <!-- /.awe-media -->
-    </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
 
-    <div class="col-md-9 col-sm-8 col-md-pull-3 col-sm-pull-4">
-        <div class="products owl-carousel" data-items="3">
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/shoes/1.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
-                            Cotton Shirt</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Short</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$80</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/shoes/2.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge
-                            Navy/White</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Shirt</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$50</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/shoes/3.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
-                            Cotton Shirt</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Shirt</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$60</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/shoes/4.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
-                            Cotton Shirt</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Shirt</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$50</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-        </div>
-        <!-- ./products -->
-    </div>
-</div>
-<!-- /.row -->
-
-<div class="row">
-    <div class="col-md-3 col-sm-4">
-        <div class="awe-media home-cate-media">
-            <div class="awe-media-header">
-                <div class="awe-media-image">
-                    <img src="./img/samples/collections/index-1/accessories.jpg" alt="">
-                </div>
-                <!-- /.awe-media-image -->
-
-                <div class="awe-media-overlay overlay-dark-50 fullpage">
-                    <div class="content">
-
-                        <div class="fp-table text-left">
-                            <div class="fp-table-cell">
-
-                                <h2 class="upper">Accessories</h2>
-                                <p class="margin-bottom-50">At vero eos et accusamus et iusto
-                                    odiovoluptatum deleniti corrupti quos dolores</p>
-                                <a href="#" class="btn btn-sm btn-outline btn-white">View All</a>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <!-- /.awe-media-overlay -->
-            </div>
-            <!-- /.awe-media-header -->
-        </div>
-        <!-- /.awe-media -->
-    </div>
-
-    <div class="col-md-9 col-sm-8">
-        <div class="products owl-carousel" data-items="3">
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/accessories/1.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
-                            Cotton Shirt</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Short</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$80</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/accessories/2.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge
-                            Navy/White</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Shirt</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$50</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/accessories/3.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
-                            Cotton Shirt</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Shirt</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$60</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-            <div class="product product-grid">
-                <div class="product-media">
-                    <div class="product-thumbnail">
-                        <a href="product-fullwidth.html" title="">
-                            <img src="./img/samples/products/index/accessories/4.jpg" alt=""
-                                 class="current">
-                            <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                        </a>
-                    </div>
-                    <!-- /.product-thumbnail -->
-
-
-                    <div class="product-hover">
-                        <div class="product-actions">
-                            <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                               title="Add to cart">
-                                <i class="icon icon-shopping-bag"></i>
-                            </a>
-
-                            <a href="#" class="awe-button product-quick-whistlist"
-                               data-toggle="tooltip" title="Add to whistlist">
-                                <i class="icon icon-star"></i>
-                            </a>
-
-                            <a href="product-quick-view.html" class="awe-button product-quick-view"
-                               data-toggle="tooltip" title="Quickview">
-                                <i class="icon icon-eye"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- /.product-hover -->
-
-
-                </div>
-                <!-- /.product-media -->
-
-                <div class="product-body">
-                    <h2 class="product-name">
-                        <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport
-                            Cotton Shirt</a>
-                    </h2>
-                    <!-- /.product-product -->
-
-                    <div class="product-category">
-                        <span>Shirt</span>
-                    </div>
-                    <!-- /.product-category -->
-
-                    <div class="product-price">
-
-                        <span class="amount">$50</span>
-
-                    </div>
-                    <!-- /.product-price -->
-                </div>
-                <!-- /.product-body -->
-            </div>
-            <!-- /.product -->
-
-
-        </div>
-        <!-- ./products -->
-    </div>
-</div>
-<!-- /.row -->
-</div>
-<!-- /.home-products -->
-
-</div>
-<!-- /.container -->
-</section>
-<!-- /section -->
-
-<div class="container">
-    <div class="divider"></div>
-</div>
-
-
-<div class="container">
-    <div class="divider"></div>
-</div>
-
-<section>
     <div class="container">
-        <div class="padding-vertical-50">
+        <div class="divider"></div>
+    </div>
 
-            <div class="arrivals">
+    <!-- /section -->
+
+    <section class="background background-color-dark background-image-section-customers-say">
+        <div class="container">
+            <div class="padding-top-60">
                 <div class="section-header center">
-                    <h2>New Arrivals</h2>
+                    <h2>Customer Say</h2>
                 </div>
                 <!-- /.section-header -->
 
-                <div class="products home-products owl-carousel" data-items="4">
-
-
-                    <div class="product product-grid">
-                        <div class="product-media">
-                            <div class="product-thumbnail">
-                                <a href="product-fullwidth.html" title="">
-                                    <img src="./img/samples/products/index/arrivals/1.jpg" alt=""
-                                         class="current">
-                                    <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                                </a>
-                            </div>
-                            <!-- /.product-thumbnail -->
-
-
-                            <div class="product-hover">
-                                <div class="product-actions">
-                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                                       title="Add to cart">
-                                        <i class="icon icon-shopping-bag"></i>
-                                    </a>
-
-                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
-                                       title="Add to whistlist">
-                                        <i class="icon icon-star"></i>
-                                    </a>
-
-                                    <a href="product-quick-view.html" class="awe-button product-quick-view"
-                                       data-toggle="tooltip" title="Quickview">
-                                        <i class="icon icon-eye"></i>
-                                    </a>
+                <div class="section-customers">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="customers-carousel owl-carousel" id="customers-carousel"
+                                 data-toggle="carousel" data-dots="true" data-nav="0">
+                                <div class="center">
+                                    <h4>Natasha Roson</h4>
+                                    <p>�There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered alteration in some form, by injected humour, or
+                                        randomised words which don't look even slightly believable. If
+                                        you are going to use a passage of Lorem Ipsum�</p>
                                 </div>
-                            </div>
-                            <!-- /.product-hover -->
+                                <!-- /.center -->
 
-
-                        </div>
-                        <!-- /.product-media -->
-
-                        <div class="product-body">
-                            <h2 class="product-name">
-                                <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
-                                    Shirt</a>
-                            </h2>
-                            <!-- /.product-product -->
-
-                            <div class="product-category">
-                                <span>Short</span>
-                            </div>
-                            <!-- /.product-category -->
-
-                            <div class="product-price">
-
-                                <span class="amount">$80</span>
-
-                            </div>
-                            <!-- /.product-price -->
-                        </div>
-                        <!-- /.product-body -->
-                    </div>
-                    <!-- /.product -->
-
-
-                    <div class="product product-grid">
-                        <div class="product-media">
-                            <div class="product-thumbnail">
-                                <a href="product-fullwidth.html" title="">
-                                    <img src="./img/samples/products/index/arrivals/2.jpg" alt=""
-                                         class="current">
-                                    <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                                </a>
-                            </div>
-                            <!-- /.product-thumbnail -->
-
-
-                            <div class="product-hover">
-                                <div class="product-actions">
-                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                                       title="Add to cart">
-                                        <i class="icon icon-shopping-bag"></i>
-                                    </a>
-
-                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
-                                       title="Add to whistlist">
-                                        <i class="icon icon-star"></i>
-                                    </a>
-
-                                    <a href="product-quick-view.html" class="awe-button product-quick-view"
-                                       data-toggle="tooltip" title="Quickview">
-                                        <i class="icon icon-eye"></i>
-                                    </a>
+                                <div class="center">
+                                    <h4>Natasha Roson</h4>
+                                    <p>�There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered alteration in some form, by injected humour, or
+                                        randomised words which don't look even slightly believable. If
+                                        you are going to use a passage of Lorem Ipsum�</p>
                                 </div>
-                            </div>
-                            <!-- /.product-hover -->
+                                <!-- /.center -->
 
-
-                        </div>
-                        <!-- /.product-media -->
-
-                        <div class="product-body">
-                            <h2 class="product-name">
-                                <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge Navy/White</a>
-                            </h2>
-                            <!-- /.product-product -->
-
-                            <div class="product-category">
-                                <span>Shirt</span>
-                            </div>
-                            <!-- /.product-category -->
-
-                            <div class="product-price">
-
-                                <span class="amount">$50</span>
-
-                            </div>
-                            <!-- /.product-price -->
-                        </div>
-                        <!-- /.product-body -->
-                    </div>
-                    <!-- /.product -->
-
-
-                    <div class="product product-grid">
-                        <div class="product-media">
-                            <div class="product-thumbnail">
-                                <a href="product-fullwidth.html" title="">
-                                    <img src="./img/samples/products/index/arrivals/3.jpg" alt=""
-                                         class="current">
-                                    <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                                </a>
-                            </div>
-                            <!-- /.product-thumbnail -->
-
-
-                            <div class="product-hover">
-                                <div class="product-actions">
-                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                                       title="Add to cart">
-                                        <i class="icon icon-shopping-bag"></i>
-                                    </a>
-
-                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
-                                       title="Add to whistlist">
-                                        <i class="icon icon-star"></i>
-                                    </a>
-
-                                    <a href="product-quick-view.html" class="awe-button product-quick-view"
-                                       data-toggle="tooltip" title="Quickview">
-                                        <i class="icon icon-eye"></i>
-                                    </a>
+                                <div class="center">
+                                    <h4>Natasha Roson</h4>
+                                    <p>�There are many variations of passages of Lorem Ipsum available, but the
+                                        majority have suffered alteration in some form, by injected humour, or
+                                        randomised words which don't look even slightly believable. If
+                                        you are going to use a passage of Lorem Ipsum�</p>
                                 </div>
+                                <!-- /.center -->
                             </div>
-                            <!-- /.product-hover -->
-
-
+                            <!-- /.customers-say-carousel -->
                         </div>
-                        <!-- /.product-media -->
-
-                        <div class="product-body">
-                            <h2 class="product-name">
-                                <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
-                                    Shirt</a>
-                            </h2>
-                            <!-- /.product-product -->
-
-                            <div class="product-category">
-                                <span>Shirt</span>
-                            </div>
-                            <!-- /.product-category -->
-
-                            <div class="product-price">
-
-                                <span class="amount">$60</span>
-
-                            </div>
-                            <!-- /.product-price -->
-                        </div>
-                        <!-- /.product-body -->
                     </div>
-                    <!-- /.product -->
-
-
-                    <div class="product product-grid">
-                        <div class="product-media">
-                            <div class="product-thumbnail">
-                                <a href="product-fullwidth.html" title="">
-                                    <img src="./img/samples/products/index/arrivals/4.jpg" alt=""
-                                         class="current">
-                                    <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                                </a>
-                            </div>
-                            <!-- /.product-thumbnail -->
-
-
-                            <div class="product-hover">
-                                <div class="product-actions">
-                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                                       title="Add to cart">
-                                        <i class="icon icon-shopping-bag"></i>
-                                    </a>
-
-                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
-                                       title="Add to whistlist">
-                                        <i class="icon icon-star"></i>
-                                    </a>
-
-                                    <a href="product-quick-view.html" class="awe-button product-quick-view"
-                                       data-toggle="tooltip" title="Quickview">
-                                        <i class="icon icon-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- /.product-hover -->
-
-
-                        </div>
-                        <!-- /.product-media -->
-
-                        <div class="product-body">
-                            <h2 class="product-name">
-                                <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
-                                    Shirt</a>
-                            </h2>
-                            <!-- /.product-product -->
-
-                            <div class="product-category">
-                                <span>Shirt</span>
-                            </div>
-                            <!-- /.product-category -->
-
-                            <div class="product-price">
-
-                                <span class="amount">$50</span>
-
-                            </div>
-                            <!-- /.product-price -->
-                        </div>
-                        <!-- /.product-body -->
-                    </div>
-                    <!-- /.product -->
-
-
-                    <div class="product product-grid">
-                        <div class="product-media">
-                            <div class="product-thumbnail">
-                                <a href="product-fullwidth.html" title="">
-                                    <img src="./img/samples/products/index/arrivals/5.jpg" alt=""
-                                         class="current">
-                                    <img src="./img/samples/products/index/clothing/2.jpg" alt="">
-                                </a>
-                            </div>
-                            <!-- /.product-thumbnail -->
-
-
-                            <div class="product-hover">
-                                <div class="product-actions">
-                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip"
-                                       title="Add to cart">
-                                        <i class="icon icon-shopping-bag"></i>
-                                    </a>
-
-                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip"
-                                       title="Add to whistlist">
-                                        <i class="icon icon-star"></i>
-                                    </a>
-
-                                    <a href="product-quick-view.html" class="awe-button product-quick-view"
-                                       data-toggle="tooltip" title="Quickview">
-                                        <i class="icon icon-eye"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- /.product-hover -->
-
-
-                        </div>
-                        <!-- /.product-media -->
-
-                        <div class="product-body">
-                            <h2 class="product-name">
-                                <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton
-                                    Shirt</a>
-                            </h2>
-                            <!-- /.product-product -->
-
-                            <div class="product-category">
-                                <span>Shirt</span>
-                            </div>
-                            <!-- /.product-category -->
-
-                            <div class="product-price">
-
-                                <span class="amount">$50</span>
-
-                            </div>
-                            <!-- /.product-price -->
-                        </div>
-                        <!-- /.product-body -->
-                    </div>
-                    <!-- /.product -->
-
-
                 </div>
-                <!-- /.products -->
+                <!-- /.section-content -->
             </div>
-            <!-- /.arrivals -->
-
-        </div>
-    </div>
-    <!-- /.container -->
-</section>
-<!-- /section -->
-
-<div class="container">
-    <div class="divider"></div>
-</div>
-
-<!-- /section -->
-
-<section class="background background-color-dark background-image-section-customers-say">
-    <div class="container">
-        <div class="padding-top-60">
-            <div class="section-header center">
-                <h2>Customer Say</h2>
-            </div>
-            <!-- /.section-header -->
-
-            <div class="section-customers">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="customers-carousel owl-carousel" id="customers-carousel"
-                             data-toggle="carousel" data-dots="true" data-nav="0">
-                            <div class="center">
-                                <h4>Natasha Roson</h4>
-                                <p>�There are many variations of passages of Lorem Ipsum available, but the
-                                    majority have suffered alteration in some form, by injected humour, or
-                                    randomised words which don't look even slightly believable. If
-                                    you are going to use a passage of Lorem Ipsum�</p>
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <h4>Natasha Roson</h4>
-                                <p>�There are many variations of passages of Lorem Ipsum available, but the
-                                    majority have suffered alteration in some form, by injected humour, or
-                                    randomised words which don't look even slightly believable. If
-                                    you are going to use a passage of Lorem Ipsum�</p>
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <h4>Natasha Roson</h4>
-                                <p>�There are many variations of passages of Lorem Ipsum available, but the
-                                    majority have suffered alteration in some form, by injected humour, or
-                                    randomised words which don't look even slightly believable. If
-                                    you are going to use a passage of Lorem Ipsum�</p>
-                            </div>
-                            <!-- /.center -->
-                        </div>
-                        <!-- /.customers-say-carousel -->
-                    </div>
-                </div>
-            </div>
-            <!-- /.section-content -->
-        </div>
-    </div>
-    <!-- /.container -->
-
-    <div class="section-brands">
-        <div class="container">
-            <div class="brands-carousel owl-carousel" id="brands-carousel">
-
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-1.png" alt="">
-                </div>
-                <!-- /.center -->
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-2.png" alt="">
-                </div>
-                <!-- /.center -->
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-3.png" alt="">
-                </div>
-                <!-- /.center -->
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-4.png" alt="">
-                </div>
-                <!-- /.center -->
-
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-1.png" alt="">
-                </div>
-                <!-- /.center -->
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-2.png" alt="">
-                </div>
-                <!-- /.center -->
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-3.png" alt="">
-                </div>
-                <!-- /.center -->
-
-                <div class="center">
-                    <img src="./img/samples/brands/brand-4.png" alt="">
-                </div>
-                <!-- /.center -->
-
-
-            </div>
-            <!-- /.brands-carousel -->
         </div>
         <!-- /.container -->
-    </div>
-    <!-- /.section-brands -->
 
-</section>
-<!-- /section -->
+        <div class="section-brands">
+            <div class="container">
+                <div class="brands-carousel owl-carousel" id="brands-carousel">
 
-<section>
-    <div class="container">
-        <div class="padding-vertical-60">
-            <div class="section-header">
-                <h2>News</h2>
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-1.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-2.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-3.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-4.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-1.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-2.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-3.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+                    <div class="center">
+                        <img src="./img/samples/brands/brand-4.png" alt="">
+                    </div>
+                    <!-- /.center -->
+
+
+                </div>
+                <!-- /.brands-carousel -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.section-brands -->
+
+    </section>
+    <!-- /section -->
+
+    <section>
+        <div class="container">
+            <div class="padding-vertical-60">
+                <div class="section-header">
+                    <h2>News</h2>
+                </div>
+
+                <div class="section-content">
+                    <div class="home-section-posts owl-carousel">
+
+                        <div class="section-post">
+                            <div class="section-post-media">
+                                <a href="#" title="San Francisco Felt Pennant">
+                                    <img src="./img/samples/posts/index/1.jpg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="section-post-body">
+                                <div class="section-post-time">
+                                    <span>26</span> <small>August</small>
+                                </div>
+
+                                <h4 class="section-post-title">
+                                    <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
+                                </h4>
+
+                                <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
+                                    typeseting industry.</p>
+
+                                <a href="#" title="" class="read-more">Read more</a>
+                            </div>
+                        </div>
+
+                        <div class="section-post">
+                            <div class="section-post-media">
+                                <a href="#" title="San Francisco Felt Pennant">
+                                    <img src="./img/samples/posts/index/2.jpg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="section-post-body">
+                                <div class="section-post-time">
+                                    <span>18</span> <small>August</small>
+                                </div>
+
+                                <h4 class="section-post-title">
+                                    <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
+                                </h4>
+
+                                <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
+                                    typeseting industry.</p>
+
+                                <a href="#" title="" class="read-more">Read more</a>
+                            </div>
+                        </div>
+
+                        <div class="section-post">
+                            <div class="section-post-media">
+                                <a href="#" title="San Francisco Felt Pennant">
+                                    <img src="./img/samples/posts/index/1.jpg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="section-post-body">
+                                <div class="section-post-time">
+                                    <span>26</span> <small>August</small>
+                                </div>
+
+                                <h4 class="section-post-title">
+                                    <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
+                                </h4>
+
+                                <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
+                                    typeseting industry.</p>
+
+                                <a href="#" title="" class="read-more">Read more</a>
+                            </div>
+                        </div>
+
+                        <div class="section-post">
+                            <div class="section-post-media">
+                                <a href="#" title="San Francisco Felt Pennant">
+                                    <img src="./img/samples/posts/index/2.jpg" alt="">
+                                </a>
+                            </div>
+
+                            <div class="section-post-body">
+                                <div class="section-post-time">
+                                    <span>18</span> <small>August</small>
+                                </div>
+
+                                <h4 class="section-post-title">
+                                    <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
+                                </h4>
+
+                                <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
+                                    typeseting industry.</p>
+
+                                <a href="#" title="" class="read-more">Read more</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="section-content">
-                <div class="home-section-posts owl-carousel">
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
 
-                    <div class="section-post">
-                        <div class="section-post-media">
-                            <a href="#" title="San Francisco Felt Pennant">
-                                <img src="./img/samples/posts/index/1.jpg" alt="">
-                            </a>
+    <section>
+        <div class="container">
+            <div class="margin-bottom-50">
+                <div class="subscible-wrapper subscible-inline">
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <h3 class="subscribe-title">Subscribe newsletter</h3>
                         </div>
 
-                        <div class="section-post-body">
-                            <div class="section-post-time">
-                                <span>26</span> <small>August</small>
+                        <div class="col-md-4">
+                            <div class="subscribe-comment">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                             </div>
-
-                            <h4 class="section-post-title">
-                                <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
-                            </h4>
-
-                            <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
-                                typeseting industry.</p>
-
-                            <a href="#" title="" class="read-more">Read more</a>
-                        </div>
-                    </div>
-
-                    <div class="section-post">
-                        <div class="section-post-media">
-                            <a href="#" title="San Francisco Felt Pennant">
-                                <img src="./img/samples/posts/index/2.jpg" alt="">
-                            </a>
                         </div>
 
-                        <div class="section-post-body">
-                            <div class="section-post-time">
-                                <span>18</span> <small>August</small>
-                            </div>
+                        <div class="col-md-6">
+                            <form method="GET" action="adminIndex.html" class="subscible-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="subscribe-email">Email</label>
+                                    <input type="email" placeholder="Enter your email address" class="form-control"
+                                           id="subscribe-email">
+                                </div>
 
-                            <h4 class="section-post-title">
-                                <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
-                            </h4>
-
-                            <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
-                                typeseting industry.</p>
-
-                            <a href="#" title="" class="read-more">Read more</a>
-                        </div>
-                    </div>
-
-                    <div class="section-post">
-                        <div class="section-post-media">
-                            <a href="#" title="San Francisco Felt Pennant">
-                                <img src="./img/samples/posts/index/1.jpg" alt="">
-                            </a>
-                        </div>
-
-                        <div class="section-post-body">
-                            <div class="section-post-time">
-                                <span>26</span> <small>August</small>
-                            </div>
-
-                            <h4 class="section-post-title">
-                                <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
-                            </h4>
-
-                            <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
-                                typeseting industry.</p>
-
-                            <a href="#" title="" class="read-more">Read more</a>
-                        </div>
-                    </div>
-
-                    <div class="section-post">
-                        <div class="section-post-media">
-                            <a href="#" title="San Francisco Felt Pennant">
-                                <img src="./img/samples/posts/index/2.jpg" alt="">
-                            </a>
-                        </div>
-
-                        <div class="section-post-body">
-                            <div class="section-post-time">
-                                <span>18</span> <small>August</small>
-                            </div>
-
-                            <h4 class="section-post-title">
-                                <a href="#" title="San Francisco Felt Pennant">San Francisco Felt Pennant</a>
-                            </h4>
-
-                            <p class="section-post-excerpt">Lorem Ipsum is simply dummy text of the printing and
-                                typeseting industry.</p>
-
-                            <a href="#" title="" class="read-more">Read more</a>
+                                <div class="form-submit">
+                                    <button class="btn btn-lg btn-primary" type="submit">Subscribe email</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
                 </div>
+                <!-- /.subscible-wrapper -->
             </div>
         </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
 
-    </div>
-    <!-- /.container -->
-</section>
-<!-- /section -->
+    <section>
+        <div class="container">
 
-<section>
-    <div class="container">
-        <div class="margin-bottom-50">
-            <div class="subscible-wrapper subscible-inline">
-
-                <div class="row">
-                    <div class="col-md-2">
-                        <h3 class="subscribe-title">Subscribe newsletter</h3>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="subscribe-comment">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="awe-media margin-bottom-20">
+                        <div class="awe-media-image">
+                            <a href="#">
+                                <img src="./img/samples/banners/home/home-banner-1.png" alt="">
+                            </a>
                         </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <form method="GET" action="adminIndex.html" class="subscible-form">
-                            <div class="form-group">
-                                <label class="sr-only" for="subscribe-email">Email</label>
-                                <input type="email" placeholder="Enter your email address" class="form-control"
-                                       id="subscribe-email">
-                            </div>
-
-                            <div class="form-submit">
-                                <button class="btn btn-lg btn-primary" type="submit">Subscribe email</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.subscible-wrapper -->
-        </div>
-    </div>
-    <!-- /.container -->
-</section>
-<!-- /section -->
-
-<section>
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="awe-media margin-bottom-20">
-                    <div class="awe-media-image">
-                        <a href="#">
-                            <img src="./img/samples/banners/home/home-banner-1.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <!-- /.awe-media -->
-            </div>
-
-            <div class="col-md-6 col-sm-6">
-                <div class="awe-media margin-bottom-20">
-                    <div class="awe-media-image">
-                        <a href="#">
-                            <img src="./img/samples/banners/home/home-banner-2.png" alt="">
-                        </a>
                     </div>
                     <!-- /.awe-media -->
                 </div>
-            </div>
-        </div>
-        <!-- /.row -->
 
-    </div>
-    <!-- /.container -->
-</section>
-<!-- /section -->
+                <div class="col-md-6 col-sm-6">
+                    <div class="awe-media margin-bottom-20">
+                        <div class="awe-media-image">
+                            <a href="#">
+                                <img src="./img/samples/banners/home/home-banner-2.png" alt="">
+                            </a>
+                        </div>
+                        <!-- /.awe-media -->
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
 
 
 </div>
