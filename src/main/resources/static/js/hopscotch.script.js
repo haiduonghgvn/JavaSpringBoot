@@ -1,5 +1,5 @@
 var tour;
-$(document).ready(function() {
+$(document).ready(function () {
     tour = {
         id: "demo-tour",
         showPrevButton: !0,
@@ -22,6 +22,6 @@ $(document).ready(function() {
     }
 
 });
-$("#startTourBtn").on("click", function(t) {
+$("#startTourBtn").on("click", function (t) {
     hopscotch.startTour(tour)
 });

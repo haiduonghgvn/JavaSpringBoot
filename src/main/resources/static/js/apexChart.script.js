@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     // basic Line Chart
 
@@ -46,7 +46,7 @@ $(document).ready(function() {
         xaxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#basicLine-chart"),
@@ -95,9 +95,9 @@ $(document).ready(function() {
             curve: 'smooth'
         },
         series: [{
-                name: "High - 2013",
-                data: [28, 29, 33, 36, 32, 32, 33]
-            },
+            name: "High - 2013",
+            data: [28, 29, 33, 36, 32, 32, 33]
+        },
             {
                 name: "Low - 2013",
                 data: [12, 11, 14, 18, 17, 13, 13]
@@ -135,7 +135,7 @@ $(document).ready(function() {
             offsetY: -25,
             offsetX: -5
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#lineChartWIthDataLabel"),
@@ -147,7 +147,7 @@ $(document).ready(function() {
     // Zoomable timeseries line chart
     var ts2 = 1484418600000;
     var dates = [];
-    var spikes = [5, -5, 3, -3, 8, -8]
+    var spikes = [5, -5, 3, -3, 8, -8];
     for (var i = 0; i < 120; i++) {
         ts2 = ts2 + 86400000;
         var innerArr = [ts2, dataSeries[1][i].value];
@@ -192,7 +192,7 @@ $(document).ready(function() {
             min: 20000000,
             max: 250000000,
             labels: {
-                formatter: function(val) {
+                formatter: function (val) {
                     return (val / 1000000).toFixed(0);
                 },
             },
@@ -207,12 +207,12 @@ $(document).ready(function() {
         tooltip: {
             shared: false,
             y: {
-                formatter: function(val) {
+                formatter: function (val) {
                     return (val / 1000000).toFixed(0)
                 }
             }
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#zoomableLine-chart"),
@@ -278,7 +278,7 @@ $(document).ready(function() {
                 text: 'Engagement',
             },
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#gradientLineChart"),
@@ -299,7 +299,7 @@ $(document).ready(function() {
     */
 
     var lastDate = 0;
-    var data = []
+    var data = [];
 
     function getDayWiseTimeSeries(baseval, count, yrange) {
         var i = 0;
@@ -311,7 +311,7 @@ $(document).ready(function() {
                 x,
                 y
             });
-            lastDate = baseval
+            lastDate = baseval;
             baseval += 86400000;
             i++;
         }
@@ -320,11 +320,11 @@ $(document).ready(function() {
     getDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 10, {
         min: 10,
         max: 90
-    })
+    });
 
     function getNewSeries(baseval, yrange) {
         var newDate = baseval + 86400000;
-        lastDate = newDate
+        lastDate = newDate;
         data.push({
             x: newDate,
             y: Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
@@ -395,7 +395,7 @@ $(document).ready(function() {
         legend: {
             show: false
         },
-    }
+    };
 
     var RealTimechart = new ApexCharts(
         document.querySelector("#realTimeLine-chart"),
@@ -406,11 +406,11 @@ $(document).ready(function() {
 
     var dataPointsLength = 10;
 
-    window.setInterval(function() {
+    window.setInterval(function () {
         getNewSeries(lastDate, {
             min: 10,
             max: 90
-        })
+        });
 
         RealTimechart.updateSeries([{
             data: data
@@ -418,12 +418,12 @@ $(document).ready(function() {
     }, 2000);
 
     // every 60 seconds, we reset the data 
-    window.setInterval(function() {
-        resetData()
+    window.setInterval(function () {
+        resetData();
         RealTimechart.updateSeries([{
             data
         }], false, true)
-    }, 60000)
+    }, 60000);
 
     // Dashed Line Chart
     var options = {
@@ -443,9 +443,9 @@ $(document).ready(function() {
             dashArray: [0, 8, 5]
         },
         series: [{
-                name: "Session Duration",
-                data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
-            },
+            name: "Session Duration",
+            data: [45, 52, 38, 24, 33, 26, 21, 20, 6, 8, 15, 10]
+        },
             {
                 name: "Page Views",
                 data: [35, 41, 62, 42, 13, 18, 29, 37, 36, 51, 32, 35]
@@ -471,19 +471,19 @@ $(document).ready(function() {
         tooltip: {
             y: [{
                 title: {
-                    formatter: function(val) {
+                    formatter: function (val) {
                         return val + " (mins)"
                     }
                 }
             }, {
                 title: {
-                    formatter: function(val) {
+                    formatter: function (val) {
                         return val + " per session"
                     }
                 }
             }, {
                 title: {
-                    formatter: function(val) {
+                    formatter: function (val) {
                         return val;
                     }
                 }
@@ -492,7 +492,7 @@ $(document).ready(function() {
         grid: {
             borderColor: '#f1f1f1',
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#dashedLineChart"),
@@ -502,12 +502,11 @@ $(document).ready(function() {
     chart.render();
 
 
-
     // brush chart
     var data = generateDayWiseTimeSeries(new Date('11 Feb 2017').getTime(), 185, {
         min: 30,
         max: 90
-    })
+    });
     var optionsline2 = {
         chart: {
             id: 'chart2',
@@ -537,7 +536,7 @@ $(document).ready(function() {
         xaxis: {
             type: 'datetime'
         }
-    }
+    };
 
     var chartline2 = new ApexCharts(
         document.querySelector("#chart-line2"),
@@ -583,7 +582,7 @@ $(document).ready(function() {
         yaxis: {
             tickAmount: 2
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#brushLine-chart"),

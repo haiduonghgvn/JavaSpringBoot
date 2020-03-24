@@ -1,9 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
 
     $('#show-todo-items').html(localStorage.getItem('LocalStoragelistItems'));
 
-    $('.create-items').submit(function(event) {
+    $('.create-items').submit(function (event) {
         event.preventDefault();
 
         var item = $('#todo-list-item').val();
@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     });
 
-    $(document).on('change', '.checkbox', function() {
+    $(document).on('change', '.checkbox', function () {
         if ($(this).attr('checked')) {
             $(this).removeAttr('checked');
         } else {
@@ -30,7 +30,7 @@ $(document).ready(function() {
         localStorage.setItem('LocalStoragelistItems', $('#show-todo-items').html());
     });
 
-    $(document).on('click', '.remove', function() {
+    $(document).on('click', '.remove', function () {
         $(this).parent().addClass('fadeOut');
         setInterval(() => {
             $(this).parent().remove();
@@ -39,13 +39,6 @@ $(document).ready(function() {
         }, 1000);
 
     });
-
-
-
-
-
-
-
 
 
 });

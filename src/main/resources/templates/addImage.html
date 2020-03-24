@@ -162,7 +162,7 @@
                         </div>
                         <a class="dropdown-item">Account settings</a>
                         <a class="dropdown-item">Billing history</a>
-                        <a class="dropdown-item" href="signin.html">Sign out</a>
+                        <a class="dropdown-item" href="403.html">Sign out</a>
                     </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@
             <ul class="navigation-left">
                 <li class="nav-item" data-item="products">
                     <a class="nav-item-hold" th:href="@{/customer}">
-                        <i class="nav-icon i-Safe-Box"></i>
+                        <i class="nav-icon i-Find-User"></i>
                         <span class="nav-text underline bold">Customer</span>
                     </a>
                     <div class="triangle"></div>
@@ -183,7 +183,7 @@
 
                 <li class="nav-item" data-item="products">
                     <a class="nav-item-hold" href="#">
-                        <i class="nav-icon icon-user-female"></i>
+                        <i class="nav-icon i-Safe-Box"></i>
                         <span class="nav-text underline bold">Products</span>
                     </a>
                     <div class="triangle"></div>
@@ -203,31 +203,20 @@
 
         <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
             <!-- Submenu Dashboards -->
-            <ul class="childNav" data-parent="dashboard">
+            <ul class="childNav" data-parent="products">
                 <li class="nav-item">
                     <a href="dashboard.v1.html">
                         <i class="nav-icon i-Clock-3"></i>
-                        <span class="item-name">Version 1</span>
+                        <span class="item-name">Add New Product</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="dashboard.v2.html">
                         <i class="nav-icon i-Clock-4"></i>
-                        <span class="item-name">Version 2</span>
+                        <span class="item-name">Show All Products</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="dashboard.v3.html">
-                        <i class="nav-icon i-Over-Time"></i>
-                        <span class="item-name">Version 3</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="dashboard.v4.html">
-                        <i class="nav-icon i-Clock"></i>
-                        <span class="item-name">Version 4</span>
-                    </a>
-                </li>
+
             </ul>
 
         </div>
@@ -283,9 +272,9 @@
                                         <td th:text="${p.inStock}"></td>
                                         <td style="width: 150px">
                                             <a class="btn-success btn center"><span class="i-Eye-Scan"
-                                                                              style="font-size: 22px"/>&nbsp;</a>
+                                                                                    style="font-size: 22px"/>&nbsp;</a>
                                             <a class="btn-danger btn center"  th:href="@{/delete(id=${p.id})}"><span class="i-Close"
-                                                                             style="font-size: 22px"/>&nbsp;</a>
+                                                                                                                     style="font-size: 22px"/>&nbsp;</a>
 
                                         </td>
                                     </tr>

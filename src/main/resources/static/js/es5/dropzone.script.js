@@ -36,13 +36,15 @@ $(document).ready(function () {
 
 
         // accepted files
-    };Dropzone.options.fileAcceptedUpload = {
+    };
+    Dropzone.options.fileAcceptedUpload = {
         paramName: "file", // The name that will be used to transfer the file
         maxFilesize: 1, // MB
         acceptedFiles: 'image/*'
 
         // remove thumbnail
-    };Dropzone.options.fileRemoveThumbnailUpload = {
+    };
+    Dropzone.options.fileRemoveThumbnailUpload = {
         paramName: "file", // The name that will be used to transfer the file
         maxFilesize: 1, // MB
         addRemoveLinks: true,

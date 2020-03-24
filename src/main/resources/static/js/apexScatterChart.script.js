@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // simple Scatter Chart
     var Boptions = {
         chart: {
@@ -122,7 +122,7 @@ $(document).ready(function() {
         yaxis: {
             tickAmount: 7
         }
-    }
+    };
 
     var Bchart = new ApexCharts(
         document.querySelector("#simpleScatter"),
@@ -141,12 +141,12 @@ $(document).ready(function() {
             }
         },
         series: [{
-                name: 'TEAM 1',
-                data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
-                    min: 10,
-                    max: 60
-                })
-            },
+            name: 'TEAM 1',
+            data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
+                min: 10,
+                max: 60
+            })
+        },
             {
                 name: 'TEAM 2',
                 data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
@@ -194,7 +194,7 @@ $(document).ready(function() {
         yaxis: {
             max: 70
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#scatterDatetime"),

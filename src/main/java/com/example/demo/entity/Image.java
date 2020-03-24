@@ -10,13 +10,13 @@ import javax.xml.soap.Text;
 @Table(name = "images")
 public class Image {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "url",length = 1000)
+    @Column(name = "url",columnDefinition = "text")
     private String url;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="product_id", nullable=false)
     private ProductEntity productEntity;
 

@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Cart;
 import com.example.demo.entity.ProductEntity;
+import com.example.demo.model.dto.ProductDto;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class ShoppingCartController {
     @Autowired
     private ProductService productService;
 
-    //    Get Information
+    //    Get Information Product
     @RequestMapping(value = "/detail")
     public String detailProduct(Model model, @RequestParam("id") Long id, HttpSession httpSession) {
         model.addAttribute("productDetail", productService.findById(id));
@@ -30,8 +31,10 @@ public class ShoppingCartController {
 
     @GetMapping(value = "/store")
     public ModelAndView home() {
+        List<ProductDto> productDtos= productService.getTopProduct();
+        System.out.println(productDtos.toString());
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("fiveProduct", productService.getTopProduct());
+        modelAndView.addObject("fiveProduct", productDtos);
         modelAndView.setViewName("indexStore");
         return modelAndView;
     }
@@ -115,5 +118,34 @@ public class ShoppingCartController {
         }
         return total;
     }
+
+//    ====================== UPDATE CART ======================
+//
+//    @RequestMapping("/cart/update")
+//    public ModelAndView updateCart(@RequestParam Long id,
+//                                   @RequestParam int quamtity,
+//                                   HttpSession httpSession){
+//        ModelAndView modelAndView = new ModelAndView("shop/cart");
+//        List<Cart> list = (List<Cart>) httpSession.getAttribute("cart");
+//        if (list != null){
+//            BigDecimal total = updateCartItem(list,id,quamtity);
+//            modelAndView.addObject("total",total);
+//            httpSession.setAttribute("cart",list);
+//        }
+//        modelAndView.addObject("listCart",list);
+//        return modelAndView;
+//    }
+//
+//    private BigDecimal updateCartItem(List<Cart> list, Long id, int quamtity) {
+//        BigDecimal total = new BigDecimal(0);
+//        for (Cart c : list){
+//            if (c.getId()==id){
+//                c.setQuamlity(quamtity);
+//            }
+//            total=total.add(c.getPrice().multiply(new BigDecimal(c.getQuamlity())));
+//        }
+//        return total;
+//    }
+//
 
 }

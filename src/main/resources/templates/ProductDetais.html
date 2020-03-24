@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org">
+<html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
 
@@ -74,9 +74,8 @@
                                                              class="img-circle">
                                                     </a>
                                                 </div>
-
                                                 <div class="header-account-username">
-                                                    <h4><a href="#">Jessica Alba</a></h4>
+                                                    <h4><<span sec:authentication="name"></span> </h4>
                                                 </div>
 
                                                 <ul>
@@ -84,9 +83,11 @@
                                                     </li>
                                                     <li><a href="#">Account Infomation</a>
                                                     </li>
-                                                    <li><a href="#">Logout</a>
+
+                                                    <form action="#" th:action="@{/logout}" method="POST">
+                                                        <li><a type="submit" href="#">Logout</a>
+                                                    </form>
                                                     </li>
-                                                </ul>
                                             </div>
                                         </div>
                                     </li>
@@ -268,7 +269,7 @@
                                 </a>
 
                                 <div class="menubar-search-form" id="menubar-search-form">
-                                    <form action="index.html" method="GET">
+                                    <form action="adminIndex.html" method="GET">
                                         <input type="text" name="s" class="form-control"
                                                placeholder="Search your entry here...">
                                         <div class="menubar-search-buttons">
@@ -286,7 +287,7 @@
                     </div>
 
                     <div class="awe-logo">
-                        <a href="index.html" title="">
+                        <a href="adminIndex.html" title="">
                             <img src="./img/logo.png" alt="">
                         </a>
                     </div>
@@ -780,7 +781,7 @@
         <!-- Tab panes -->
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="account-login">
-                <form action="index.html" method="POST">
+                <form action="adminIndex.html" method="POST">
                     <div class="form-group">
                         <label for="login-account">Account</label>
                         <input type="text" class="form-control" id="login-account">
@@ -810,7 +811,7 @@
             <!-- /.tab-pane -->
 
             <div role="tabpanel" class="tab-pane" id="account-register">
-                <form action="index.html" method="POST">
+                <form action="adminIndex.html" method="POST">
                     <div class="form-group">
                         <label for="register-username">Username <sup>*</sup>
                         </label>

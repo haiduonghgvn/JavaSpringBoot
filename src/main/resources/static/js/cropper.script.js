@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
     var $image = $('.cropper-main-img');
     var $dataX = $('.cropper-main-dataX');
     var $dataY = $('.cropper-main-dataY');
@@ -11,7 +11,7 @@ $(document).ready(function(){
         viewMode: 1,
         aspectRatio: 16 / 9,
         preview: '.img-preview',
-        crop: function(e) {
+        crop: function (e) {
             $dataX.val(Math.round(e.x));
             $dataY.val(Math.round(e.y));
             $dataHeight.val(Math.round(e.height));

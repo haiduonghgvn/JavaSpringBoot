@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Basic Radial Bar Chart
     var options = {
         chart: {
@@ -19,7 +19,7 @@ $(document).ready(function() {
         series: [70],
         labels: ['Cricket'],
 
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#simpleRadialBar"),
@@ -46,7 +46,7 @@ $(document).ready(function() {
                     total: {
                         show: true,
                         label: 'Total',
-                        formatter: function(w) {
+                        formatter: function (w) {
                             // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
                             return 249
                         }
@@ -62,7 +62,7 @@ $(document).ready(function() {
         series: [44, 55, 67, 83],
         labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
 
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#multipleRadialBar"),
@@ -115,7 +115,7 @@ $(document).ready(function() {
             markers: {
                 size: 0
             },
-            formatter: function(seriesName, opts) {
+            formatter: function (seriesName, opts) {
                 return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
             },
             itemMargin: {
@@ -130,7 +130,7 @@ $(document).ready(function() {
                 }
             }
         }]
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#customAngleCircleChart"),
@@ -190,7 +190,7 @@ $(document).ready(function() {
                         fontSize: '17px'
                     },
                     value: {
-                        formatter: function(val) {
+                        formatter: function (val) {
                             return parseInt(val);
                         },
                         color: '#111',
@@ -219,7 +219,7 @@ $(document).ready(function() {
         },
         labels: ['Percent'],
 
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#gradientRadial"),
@@ -271,7 +271,7 @@ $(document).ready(function() {
         },
         labels: ['Volatility'],
 
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#radialbarswithImage"),
@@ -301,7 +301,7 @@ $(document).ready(function() {
                         offsetY: 76,
                         fontSize: '22px',
                         color: undefined,
-                        formatter: function(val) {
+                        formatter: function (val) {
                             return val + "%";
                         }
                     }
@@ -325,7 +325,7 @@ $(document).ready(function() {
         series: [67],
         labels: ['Median Ratio'],
 
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#strokedangularGauge"),
@@ -386,7 +386,7 @@ $(document).ready(function() {
         series: [76],
         labels: ['Average Results'],
 
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#semiCircleGauge"),

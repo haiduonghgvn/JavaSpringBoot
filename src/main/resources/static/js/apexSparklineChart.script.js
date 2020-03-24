@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     window.Apex = {
         stroke: {
             width: 1
@@ -14,7 +14,7 @@ $(document).ready(function() {
     };
     //   spark One
 
-    var randomizeArray = function(arg) {
+    var randomizeArray = function (arg) {
         var array = arg.slice();
         var currentIndex = array.length,
             temporaryValue, randomIndex;
@@ -30,7 +30,7 @@ $(document).ready(function() {
         }
 
         return array;
-    }
+    };
 
     // data for the sparklines that appear below header area
     var sparklineData = [47, 45, 54, 38, 56, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46];
@@ -73,7 +73,7 @@ $(document).ready(function() {
         //         cssClass: 'apexcharts-yaxis-title'
         //     }
         // }
-    }
+    };
 
     var spark2 = {
         chart: {
@@ -112,7 +112,7 @@ $(document).ready(function() {
         //         cssClass: 'apexcharts-yaxis-title'
         //     }
         // }
-    }
+    };
 
     var spark3 = {
         chart: {
@@ -155,7 +155,7 @@ $(document).ready(function() {
         //         cssClass: 'apexcharts-yaxis-title'
         //     }
         // }
-    }
+    };
 
     var spark1 = new ApexCharts(document.querySelector("#spark1"), spark1);
     spark1.render();
@@ -186,7 +186,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -195,7 +195,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     var options2 = {
         chart: {
@@ -222,7 +222,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -231,7 +231,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     var options3 = {
         chart: {
@@ -254,7 +254,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -263,7 +263,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     var options4 = {
         chart: {
@@ -290,7 +290,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -299,7 +299,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     var options5 = {
         chart: {
@@ -335,7 +335,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -344,7 +344,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     var options6 = {
         chart: {
@@ -380,7 +380,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -389,7 +389,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     var options7 = {
         chart: {
@@ -425,7 +425,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -434,7 +434,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     var options8 = {
         chart: {
@@ -482,7 +482,7 @@ $(document).ready(function() {
             },
             y: {
                 title: {
-                    formatter: function(seriesName) {
+                    formatter: function (seriesName) {
                         return ''
                     }
                 }
@@ -491,7 +491,7 @@ $(document).ready(function() {
                 show: false
             }
         }
-    }
+    };
 
     new ApexCharts(document.querySelector("#chart1"), options1).render();
     new ApexCharts(document.querySelector("#chart2"), options2).render();
