@@ -56,7 +56,7 @@ $(document).ready(function () {
             series: [{
                 name: 'Online',
                 data: [35000, 69000, 22500, 60000, 50000, 50000, 30000, 80000, 70000, 60000, 20000, 30005],
-                label: {show: false, color: '#0168c1'},
+                label: { show: false, color: '#0168c1' },
                 type: 'bar',
                 barGap: 0,
                 color: '#bcbbdd',
@@ -72,7 +72,7 @@ $(document).ready(function () {
             }, {
                 name: 'Offline',
                 data: [45000, 82000, 35000, 93000, 71000, 89000, 49000, 91000, 80200, 86000, 35000, 40050],
-                label: {show: false, color: '#639'},
+                label: { show: false, color: '#639' },
                 type: 'bar',
                 color: '#7569b3',
                 smooth: true,
@@ -109,10 +109,7 @@ $(document).ready(function () {
                 type: 'pie',
                 radius: '60%',
                 center: ['50%', '50%'],
-                data: [{value: 535, name: 'USA'}, {value: 310, name: 'Brazil'}, {value: 234, name: 'France'}, {value: 155, name: 'BD'}, {
-                    value: 130,
-                    name: 'UK'
-                }, {value: 348, name: 'India'}],
+                data: [{ value: 535, name: 'USA' }, { value: 310, name: 'Brazil' }, { value: 234, name: 'France' }, { value: 155, name: 'BD' }, { value: 130, name: 'UK' }, { value: 348, name: 'India' }],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -816,10 +813,7 @@ $(document).ready(function () {
                         show: false
                     }
                 },
-                data: [{value: 335, name: 'Organic'}, {value: 310, name: 'Search Eng.'}, {value: 234, name: 'Email'}, {
-                    value: 135,
-                    name: 'Referal'
-                }, {value: 148, name: 'Social'}, {value: 548, name: 'Others'}],
+                data: [{ value: 335, name: 'Organic' }, { value: 310, name: 'Search Eng.' }, { value: 234, name: 'Email' }, { value: 135, name: 'Referal' }, { value: 148, name: 'Social' }, { value: 548, name: 'Others' }],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,

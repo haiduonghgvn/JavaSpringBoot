@@ -34,7 +34,7 @@ var options6 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -43,7 +43,7 @@ var options6 = {
             show: false
         }
     }
-};
+}
 new ApexCharts(document.querySelector("#chart13"), options6).render();
 
 // widgetChart14
@@ -82,7 +82,7 @@ var options6 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -91,7 +91,7 @@ var options6 = {
             show: false
         }
     }
-};
+}
 new ApexCharts(document.querySelector("#widgetChart14"), options6).render();
 
 //widgetChart15
@@ -129,7 +129,7 @@ var options6 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -138,7 +138,7 @@ var options6 = {
             show: false
         }
     }
-};
+}
 new ApexCharts(document.querySelector("#widgetChart15"), options6).render();
 
 // widgetChart16
@@ -176,7 +176,7 @@ var options6 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -185,7 +185,7 @@ var options6 = {
             show: false
         }
     }
-};
+}
 new ApexCharts(document.querySelector("#widgetChart16"), options6).render();
 
 //widgetChart17
@@ -223,7 +223,7 @@ var options6 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -232,7 +232,7 @@ var options6 = {
             show: false
         }
     }
-};
+}
 new ApexCharts(document.querySelector("#widgetChart17"), options6).render();
 
 // widgetChart18
@@ -270,7 +270,7 @@ var options6 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -279,7 +279,7 @@ var options6 = {
             show: false
         }
     }
-};
+}
 new ApexCharts(document.querySelector("#widgetChart18"), options6).render();
 
 // widgetCHart19
@@ -317,7 +317,7 @@ var options6 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -326,7 +326,7 @@ var options6 = {
             show: false
         }
     }
-};
+}
 new ApexCharts(document.querySelector("#widgetChart19"), options6).render();
 
 // chart1
@@ -340,7 +340,7 @@ var options1 = {
         }
 
     },
-
+   
     series: [{
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
@@ -353,7 +353,7 @@ var options1 = {
         },
         y: {
             title: {
-                formatter: function (seriesName) {
+                formatter: function(seriesName) {
                     return ''
                 }
             }
@@ -362,7 +362,7 @@ var options1 = {
             show: false
         }
     }
-};
+}
 
 
 new ApexCharts(document.querySelector("#chart1"), options1).render();

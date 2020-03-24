@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     var $appAdminWrap = $(".app-admin-wrap");
     var $html = $('html');
@@ -6,9 +6,9 @@ $(document).ready(function () {
     var $sidebarColor = $('.sidebar-colors a.color');
 
     // Change sidebar color
-    $sidebarColor.on('click', function (e) {
+    $sidebarColor.on('click', function(e) {
         e.preventDefault();
-        $appAdminWrap.removeClass(function (index, className) {
+        $appAdminWrap.removeClass(function(index, className) {
             return (className.match(/(^|\s)sidebar-\S+/g) || []).join(' ');
         });
         $appAdminWrap.addClass($(this).data('sidebar-class'));
@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
 
     // Change Direction RTL/LTR
-    $('#rtl-checkbox').change(function () {
+    $('#rtl-checkbox').change(function() {
         if (this.checked) {
             $html.attr('dir', 'rtl');
         } else {
@@ -38,10 +38,10 @@ $(document).ready(function () {
         }
     }
 
-    $('.bootstrap-colors .color').on('click', function (e) {
+    $('.bootstrap-colors .color').on('click', function(e) {
         e.preventDefault();
         let color = $(this).attr('title');
-        console.log(color);
+        console.log(color)
         let fileUrl = '/assets/styles/css/themes/' + color + '.min.css';
         if (localStorage) {
             gullUtils.changeCssLink('gull-theme', fileUrl);
@@ -51,7 +51,7 @@ $(document).ready(function () {
     });
 
     // Toggle customizer
-    $('.handle').on('click', function (e) {
+    $('.handle').on('click', function(e) {
         $customizer.toggleClass('open');
     })
 

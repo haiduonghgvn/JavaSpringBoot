@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // LIne COlumn Mix
     var options = {
         chart: {
@@ -16,7 +16,7 @@ $(document).ready(function () {
         }],
         stroke: {
             width: [0, 4],
-            curve: ['smooth', 'smooth',],
+            curve: ['smooth', 'smooth', ],
         },
         // title: {
         //     text: ''
@@ -38,7 +38,7 @@ $(document).ready(function () {
             }
         }]
 
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#lineColumn"),
@@ -81,28 +81,28 @@ $(document).ready(function () {
             categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
         },
         yaxis: [{
-            axisTicks: {
-                show: true,
-            },
-            axisBorder: {
-                show: true,
-                color: '#008FFB'
-            },
-            labels: {
-                style: {
-                    color: '#008FFB',
+                axisTicks: {
+                    show: true,
+                },
+                axisBorder: {
+                    show: true,
+                    color: '#008FFB'
+                },
+                labels: {
+                    style: {
+                        color: '#008FFB',
+                    }
+                },
+                title: {
+                    text: "Income (thousand crores)",
+                    style: {
+                        color: '#008FFB',
+                    }
+                },
+                tooltip: {
+                    enabled: true
                 }
             },
-            title: {
-                text: "Income (thousand crores)",
-                style: {
-                    color: '#008FFB',
-                }
-            },
-            tooltip: {
-                enabled: true
-            }
-        },
 
             {
                 seriesName: 'Income',
@@ -161,7 +161,7 @@ $(document).ready(function () {
             horizontalAlign: 'left',
             offsetX: 40
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#multipleYxis"),
@@ -201,10 +201,10 @@ $(document).ready(function () {
             size: 0
         },
         yaxis: [{
-            title: {
-                text: 'Series A',
+                title: {
+                    text: 'Series A',
+                },
             },
-        },
             {
                 opposite: true,
                 title: {
@@ -216,7 +216,7 @@ $(document).ready(function () {
             shared: true,
             intersect: false,
             y: {
-                formatter: function (y) {
+                formatter: function(y) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0) + " points";
                     }
@@ -226,7 +226,7 @@ $(document).ready(function () {
             }
         }
 
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#lineArea"),
@@ -291,7 +291,7 @@ $(document).ready(function () {
             shared: true,
             intersect: false,
             y: {
-                formatter: function (y) {
+                formatter: function(y) {
                     if (typeof y !== "undefined") {
                         return y.toFixed(0) + " views";
                     }
@@ -306,19 +306,19 @@ $(document).ready(function () {
             },
             markers: {
                 customHTML: [
-                    function () {
+                    function() {
                         return '<span><i class=""></i></span>'
                     },
-                    function () {
+                    function() {
                         return '<span><i class=""></i></span>'
                     },
-                    function () {
+                    function() {
                         return '<span><i class=""></i></span>'
                     }
                 ],
             }
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#lineColumnArea"),

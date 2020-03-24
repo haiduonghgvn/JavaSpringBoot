@@ -16,7 +16,7 @@ public class Image {
     @Column(name = "url",columnDefinition = "text")
     private String url;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="product_id", nullable=false)
     private ProductEntity productEntity;
 

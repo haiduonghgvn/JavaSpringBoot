@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // basic line chart
     var ctx = document.getElementById('LineChart').getContext('2d');
     var chart = new Chart(ctx, {
@@ -21,7 +21,9 @@ $(document).ready(function () {
     });
 
 
-    // line chart 2
+
+
+    // line chart 2 
     var ctx = document.getElementById("LineChart2");
     var lineChart = new Chart(ctx, {
         type: 'line',
@@ -137,14 +139,14 @@ $(document).ready(function () {
         data: {
             labels: ["January", "February", "March", "April", "May", "June", "July", 'august'],
             datasets: [{
-                label: '# of Votes',
-                backgroundColor: "#4BC0C0",
-                data: [51, 30, 40, 28, 92, 50, 45]
-            }, {
-                label: '# of Votes',
-                backgroundColor: "#36A2EB",
-                data: [41, 56, 25, 48, 72, 34, 12]
-            },
+                    label: '# of Votes',
+                    backgroundColor: "#4BC0C0",
+                    data: [51, 30, 40, 28, 92, 50, 45]
+                }, {
+                    label: '# of Votes',
+                    backgroundColor: "#36A2EB",
+                    data: [41, 56, 25, 48, 72, 34, 12]
+                },
                 {
                     label: 'Line Dataset',
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -230,6 +232,7 @@ $(document).ready(function () {
         type: 'radar',
         data: data,
     });
+
 
 
     // dhougnut chart
@@ -341,6 +344,19 @@ $(document).ready(function () {
         tooltipFillColor: "rgba(51, 51, 51, 0.55)",
         data: data
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });

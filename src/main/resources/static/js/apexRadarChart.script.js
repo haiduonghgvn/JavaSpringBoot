@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // Basic Radar Chart
 
     var options = {
@@ -14,7 +14,7 @@ $(document).ready(function () {
         //     text: 'Basic Radar Chart'
         // },
         labels: ['January', 'February', 'March', 'April', 'May', 'June']
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#basicRadar"),
@@ -58,7 +58,7 @@ $(document).ready(function () {
             size: 0
         },
         labels: ['2011', '2012', '2013', '2014', '2015', '2016']
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#radarMultiSeries"),
@@ -70,7 +70,7 @@ $(document).ready(function () {
     function updateMultiSeries() {
 
         function randomSeries() {
-            var arr = [];
+            var arr = []
             for (var i = 0; i < 6; i++) {
                 arr.push(Math.floor(Math.random() * 100))
             }
@@ -89,9 +89,9 @@ $(document).ready(function () {
             name: 'Series 3',
             data: randomSeries(),
         }]);
-    }
+    };
 
-    $('.updateRadar').on('click', function () {
+    $('.updateRadar').on('click', function() {
         updateMultiSeries();
     });
 
@@ -129,7 +129,7 @@ $(document).ready(function () {
         },
         tooltip: {
             y: {
-                formatter: function (val) {
+                formatter: function(val) {
                     return val
                 }
             }
@@ -137,7 +137,7 @@ $(document).ready(function () {
         yaxis: {
             tickAmount: 7,
             labels: {
-                formatter: function (val, i) {
+                formatter: function(val, i) {
                     if (i % 2 === 0) {
                         return val
                     } else {
@@ -146,7 +146,7 @@ $(document).ready(function () {
                 }
             }
         }
-    };
+    }
 
     var Fillchart = new ApexCharts(
         document.querySelector("#radarwithPolygonFill"),
@@ -154,6 +154,8 @@ $(document).ready(function () {
     );
 
     Fillchart.render();
+
+
 
 
 });

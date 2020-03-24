@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     // basic Area chart
     var bAOptions = {
@@ -43,7 +43,7 @@ $(document).ready(function () {
         legend: {
             horizontalAlign: 'left'
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#basicArea-chart"),
@@ -84,7 +84,7 @@ $(document).ready(function () {
                 format: 'dd/MM/yy HH:mm'
             },
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#SplineArea"),
@@ -137,8 +137,8 @@ $(document).ready(function () {
             enabled: false
         },
         series: [{
-            data: dateSeries1
-        },
+                data: dateSeries1
+            },
 
         ],
         markers: {
@@ -165,7 +165,7 @@ $(document).ready(function () {
             }
         },
 
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#timeline-chart"),
@@ -174,14 +174,14 @@ $(document).ready(function () {
 
     chart.render();
 
-    var resetCssClasses = function (activeEl) {
+    var resetCssClasses = function(activeEl) {
         var els = document.querySelectorAll("button");
-        Array.prototype.forEach.call(els, function (el) {
+        Array.prototype.forEach.call(els, function(el) {
             el.classList.remove('active');
         });
 
         activeEl.target.classList.add('active')
-    };
+    }
 
     // document.querySelector("#one_month").addEventListener('click', function(e) {
     //     resetCssClasses(e)
@@ -257,9 +257,9 @@ $(document).ready(function () {
         series: [{
             name: 'north',
             data: [{
-                x: 1996,
-                y: 322
-            },
+                    x: 1996,
+                    y: 322
+                },
                 {
                     x: 1997,
                     y: 324
@@ -474,7 +474,7 @@ $(document).ready(function () {
                 left: 20
             }
         },
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#negetiveArea"),
@@ -490,7 +490,7 @@ $(document).ready(function () {
             type: 'area',
             stacked: true,
             events: {
-                selection: function (chart, e) {
+                selection: function(chart, e) {
                     console.log(new Date(e.xaxis.min))
                 }
             },
@@ -508,12 +508,12 @@ $(document).ready(function () {
         },
 
         series: [{
-            name: 'South',
-            data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
-                min: 10,
-                max: 60
-            })
-        },
+                name: 'South',
+                data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
+                    min: 10,
+                    max: 60
+                })
+            },
             {
                 name: 'North',
                 data: generateDayWiseTimeSeries(new Date('11 Feb 2017 GMT').getTime(), 20, {
@@ -544,7 +544,7 @@ $(document).ready(function () {
         xaxis: {
             type: 'datetime'
         },
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#stackedAreaChart"),
@@ -612,9 +612,9 @@ $(document).ready(function () {
         series: [{
             name: 'Network',
             data: [{
-                x: 'Dec 23 2017',
-                y: null
-            },
+                    x: 'Dec 23 2017',
+                    y: null
+                },
                 {
                     x: 'Dec 24 2017',
                     y: 44
@@ -737,7 +737,7 @@ $(document).ready(function () {
                 text: 'Bytes Received'
             }
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#nullAreaChart"),

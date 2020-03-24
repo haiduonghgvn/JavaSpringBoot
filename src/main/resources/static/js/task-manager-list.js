@@ -3,37 +3,40 @@ let _card_footer = document.getElementById('card-footer');
 
 let _arrow_down = document.getElementById('arrow-down');
 
-let closeWindow = document.getElementById('close-window');
+let closeWindow =  document.getElementById('close-window');
 let _card = document.getElementById('card');
 
 let _reload = document.getElementById('reload');
 
-_arrow_down.addEventListener('click', minimizeButton);
+_arrow_down.addEventListener('click',minimizeButton);
 
 // minimize window
 
-function minimizeButton(e) {
+function minimizeButton(e)
+{
 
-    _card_body.classList.toggle('active');
-
+   _card_body.classList.toggle('active');
+   
     e.preventDefault();
 }
 
 // reload window
-_reload.addEventListener('click', _reloadFunction);
+_reload.addEventListener('click',_reloadFunction);
 
-function _reloadFunction(e) {
+function _reloadFunction(e)
+{
     _card_body.reload();
     e.preventDefault();
 }
 
 // remove window
 
-closeWindow.addEventListener('click', removeWindow);
+closeWindow.addEventListener('click',removeWindow);
 
-function removeWindow(e) {
+function removeWindow(e)
+{
     _card.classList.add('active');
-
+    
     e.preventDefault();
 }
 

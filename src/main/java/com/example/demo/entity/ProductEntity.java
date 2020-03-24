@@ -40,12 +40,8 @@ public class ProductEntity {
     @Column(name = "comment",columnDefinition = "text")
     private String comment;
 
-    @OneToMany
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
     private Category category;
 
     @OneToMany(mappedBy="productEntity",fetch = FetchType.EAGER)

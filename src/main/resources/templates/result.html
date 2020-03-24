@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gull - Laravel + Bootstrap 4 admin template</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/styles/css/themes/lite-purple.min.css}">
-    <link rel="stylesheet" th:href="@{/styles/vendor/perfect-scrollbar.css}">
-    <link rel="stylesheet" th:href="@{/styles/vendor/datatables.min.css}">
+    <link rel="stylesheet" th:href="@{../styles/css/themes/lite-purple.min.css}">
+    <link rel="stylesheet" th:href="@{../styles/vendor/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{../styles/vendor/datatables.min.css}">
+    <link rel="stylesheet" th:href="@{../styles/vendor/sweetalert2.min.css}">
 </head>
 
 <body class="text-left">
@@ -173,7 +174,7 @@
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
             <ul class="navigation-left">
-                <li class="nav-item">
+                <li class="nav-item" data-item="products">
                     <a class="nav-item-hold" th:href="@{/customer}">
                         <i class="nav-icon i-Find-User"></i>
                         <span class="nav-text underline bold">Customer</span>
@@ -188,13 +189,7 @@
                     </a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-item-hold" th:href="@{/image}">
-                        <i class="nav-icon i-File"></i>
-                        <span class="nav-text underline bold">Images</span>
-                    </a>
-                    <div class="triangle"></div>
-                </li>
+
                 <li class="nav-item" data-item="dashboard">
                     <a class="nav-item-hold" href="#">
                         <i class="nav-icon i-Bar-Chart"></i>
@@ -211,13 +206,13 @@
             <!-- Submenu Dashboards -->
             <ul class="childNav" data-parent="products">
                 <li class="nav-item">
-                    <a th:href="@{/news}" >
+                    <a href="dashboard.v1.html">
                         <i class="nav-icon i-Clock-3"></i>
                         <span class="item-name">Add New Product</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a th:href="@{/index}">
+                    <a href="dashboard.v2.html">
                         <i class="nav-icon i-Clock-4"></i>
                         <span class="item-name">Show All Products</span>
                     </a>
@@ -250,70 +245,27 @@
         <!-- end of row -->
 
         <div class="row mb-4">
-            <div class="col-md-12 mb-4" >
+            <div class="col-md-12 mb-4">
                 <div class="card text-left">
-
                     <div class="card-body">
-                        <div class="table-responsive">
-
-                            <table id="zero_configuration_table" class="display table table-striped table-bordered"
-                                   style="width:100%">
-                                <thead>
-                                <tr class="bold center" style="font-size: 17px" >
-                                    <th>Name</th>
-                                    <th>Desciption</th>
-                                    <th>Price</th>
-                                    <th>InStock</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <th:block th:each="p : ${products}">
-                                    <tr>
-                                        <td th:text="${p.name}">
-                                            <a th:href="#"></a>
-                                        </td>
-                                        <td th:text="${p.description}"></td>
-                                        <td th:text="${p.price}"></td>
-                                        <td th:text="${p.inStock}"></td>
-                                        <td style="width: 150px">
-                                            <a class="btn-success btn center"><span class="i-Eye-Scan"
-                                                                              style="font-size: 22px"/>&nbsp;</a>
-                                            <a class="btn-danger btn center"  th:href="@{/delete(id=${p.id})}"><span class="i-Close"
-                                                                             style="font-size: 22px"/>&nbsp;</a>
-
-                                        </td>
-                                    </tr>
-                                </th:block>
-                                </tbody>
-                                <tfoot>
-                                <tr class="bold center" style="font-size: 17px" >
-                                    <th>Name</th>
-                                    <th>Desciption</th>
-                                    <th>Price</th>
-                                    <th>InStock</th>
-                                    <th>Action</th>
-                                </tr>
-                                </tfoot>
-                            </table>
-
-                        </div>
-
+                        <h1 th:text="${message}"></h1>
+                        <h3>File Description:  <span th:text="${description}"></span></h3>
                     </div>
                 </div>
             </div>
-            <!-- end of col -->
-
         </div>
-        <!-- end of row -->
+        <!-- end of col -->
 
-
-        <!-- Footer Start -->
-        <div class="flex-grow-1"></div>
-
-        <!-- fotter end -->
     </div>
-    <!-- ============ Body content End ============= -->
+    <!-- end of row -->
+
+
+    <!-- Footer Start -->
+    <div class="flex-grow-1"></div>
+
+    <!-- fotter end -->
+</div>
+<!-- ============ Body content End ============= -->
 </div>
 <!--=============== End app-admin-wrap ================-->
 
@@ -334,142 +286,146 @@
 
     <div class="search-results list-horizontal">
         <div class="list-item col-md-12 p-0">
-            <div class="card o-hidden flex-row mb-4 d-flex">
-                <div class="list-thumb d-flex">
-                    <!-- TUMBNAIL -->
-                    <img src="./assets/images/products/headphone-1.jpg" alt="">
-                </div>
-                <div class="flex-grow-1 pl-2 d-flex">
-                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
-                        <!-- OTHER DATA -->
-                        <a href="" class="w-40 w-sm-100">
-                            <div class="item-title">Headphone 1</div>
-                        </a>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">
-                            $300
-                            <del class="text-secondary">$400</del>
-                        </p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
-                            <span class="badge badge-danger">Sale</span>
-                        </p>
+            <div class="list-item col-md-12 p-0">
+                <div class="card o-hidden flex-row mb-4 d-flex">
+                    <div class="list-thumb d-flex">
+                        <!-- TUMBNAIL -->
+                        <img src="./assets/images/products/headphone-1.jpg" alt="">
                     </div>
+                    <div class="flex-grow-1 pl-2 d-flex">
+                        <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                            <!-- OTHER DATA -->
+                            <a href="" class="w-40 w-sm-100">
+                                <div class="item-title">Headphone 1</div>
+                            </a>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">
+                                $300
+                                <del class="text-secondary">$400</del>
+                            </p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                                <span class="badge badge-danger">Sale</span>
+                            </p>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+            <div class="list-item col-md-12 p-0">
+                <div class="card o-hidden flex-row mb-4 d-flex">
+                    <div class="list-thumb d-flex">
+                        <!-- TUMBNAIL -->
+                        <img src="./assets/images/products/headphone-2.jpg" alt="">
+                    </div>
+                    <div class="flex-grow-1 pl-2 d-flex">
+                        <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                            <!-- OTHER DATA -->
+                            <a href="" class="w-40 w-sm-100">
+                                <div class="item-title">Headphone 1</div>
+                            </a>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">
+                                $300
+                                <del class="text-secondary">$400</del>
+                            </p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                                <span class="badge badge-primary">New</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="list-item col-md-12 p-0">
+                <div class="card o-hidden flex-row mb-4 d-flex">
+                    <div class="list-thumb d-flex">
+                        <!-- TUMBNAIL -->
+                        <img src="./assets/images/products/headphone-3.jpg" alt="">
+                    </div>
+                    <div class="flex-grow-1 pl-2 d-flex">
+                        <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                            <!-- OTHER DATA -->
+                            <a href="" class="w-40 w-sm-100">
+                                <div class="item-title">Headphone 1</div>
+                            </a>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">
+                                $300
+                                <del class="text-secondary">$400</del>
+                            </p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                                <span class="badge badge-primary">New</span>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="list-item col-md-12 p-0">
+                <div class="card o-hidden flex-row mb-4 d-flex">
+                    <div class="list-thumb d-flex">
+                        <!-- TUMBNAIL -->
+                        <img src="./assets/images/products/headphone-4.jpg" alt="">
+                    </div>
+                    <div class="flex-grow-1 pl-2 d-flex">
+                        <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+                            <!-- OTHER DATA -->
+                            <a href="" class="w-40 w-sm-100">
+                                <div class="item-title">Headphone 1</div>
+                            </a>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100">
+                                $300
+                                <del class="text-secondary">$400</del>
+                            </p>
+                            <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
+                                <span class="badge badge-primary">New</span>
+                            </p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="list-item col-md-12 p-0">
-            <div class="card o-hidden flex-row mb-4 d-flex">
-                <div class="list-thumb d-flex">
-                    <!-- TUMBNAIL -->
-                    <img src="./assets/images/products/headphone-2.jpg" alt="">
-                </div>
-                <div class="flex-grow-1 pl-2 d-flex">
-                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
-                        <!-- OTHER DATA -->
-                        <a href="" class="w-40 w-sm-100">
-                            <div class="item-title">Headphone 1</div>
+        <!-- PAGINATION CONTROL -->
+        <div class="col-md-12 mt-5 text-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination d-inline-flex">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
                         </a>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">
-                            $300
-                            <del class="text-secondary">$400</del>
-                        </p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
-                            <span class="badge badge-primary">New</span>
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="list-item col-md-12 p-0">
-            <div class="card o-hidden flex-row mb-4 d-flex">
-                <div class="list-thumb d-flex">
-                    <!-- TUMBNAIL -->
-                    <img src="./assets/images/products/headphone-3.jpg" alt="">
-                </div>
-                <div class="flex-grow-1 pl-2 d-flex">
-                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
-                        <!-- OTHER DATA -->
-                        <a href="" class="w-40 w-sm-100">
-                            <div class="item-title">Headphone 1</div>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
                         </a>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">
-                            $300
-                            <del class="text-secondary">$400</del>
-                        </p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
-                            <span class="badge badge-primary">New</span>
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="list-item col-md-12 p-0">
-            <div class="card o-hidden flex-row mb-4 d-flex">
-                <div class="list-thumb d-flex">
-                    <!-- TUMBNAIL -->
-                    <img src="./assets/images/products/headphone-4.jpg" alt="">
-                </div>
-                <div class="flex-grow-1 pl-2 d-flex">
-                    <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
-                        <!-- OTHER DATA -->
-                        <a href="" class="w-40 w-sm-100">
-                            <div class="item-title">Headphone 1</div>
-                        </a>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">Gadget</p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100">
-                            $300
-                            <del class="text-secondary">$400</del>
-                        </p>
-                        <p class="m-0 text-muted text-small w-15 w-sm-100 d-none d-lg-block item-badges">
-                            <span class="badge badge-primary">New</span>
-                        </p>
-                    </div>
-
-                </div>
-            </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
-    <!-- PAGINATION CONTROL -->
-    <div class="col-md-12 mt-5 text-center">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination d-inline-flex">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
-<!-- ============ Search UI End ============= -->
+    <!-- ============ Search UI End ============= -->
 
-<script th:src="@{js/vendor/jquery-3.3.1.min.js}"></script>
-<script th:src="@{js/vendor/bootstrap.bundle.min.js}"></script>
-<script th:src="@{js/vendor/perfect-scrollbar.min.js}"></script>
+    <script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{/js/vendor/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/js/vendor/perfect-scrollbar.min.js}"></script>
 
-<!-- page vendor js -->
-<script th:src="@{js/vendor/datatables.min.js}"></script>
-<script th:src="@{js/es5/script.min.js}"></script>
-<script th:src="@{js/es5/sidebar.large.script.min.js}"></script>
+    <!-- page vendor js -->
+    <script th:src="@{/js/vendor/datatables.min.js}"></script>
+    <script th:src="@{/js/es5/script.min.js}"></script>
+    <script th:src="@{/js/es5/sidebar.large.script.min.js}"></script>
 
-<!-- page custom js -->
-<script th:src="@{js/datatables.script.js}"></script>
+    <!-- page custom js -->
+    <script th:src="@{/js/datatables.script.js}"></script>
+    <script th:src="@{/js/vendor/sweetalert2.min.js}"></script>
+    <script th:src="@{/js/sweetalert.script.js}"></script>
+
 </body>
 
 </html>

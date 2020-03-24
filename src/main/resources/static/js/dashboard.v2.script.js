@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     $('#user_table').DataTable();
     $('#sales_table').DataTable();
@@ -9,7 +9,7 @@ $(document).ready(function () {
         let echart4 = echarts.init(echartElem4);
         echart4.setOption({
             ...echartOptions.lineNoAxis,
-            ...{
+            ... {
                 series: [{
                     data: [40, 80, 20, 90, 30, 80, 40],
                     lineStyle: {
@@ -20,7 +20,7 @@ $(document).ready(function () {
                         shadowOffsetY: 8,
                         shadowBlur: 10
                     },
-                    label: {show: true, color: '#212121'},
+                    label: { show: true, color: '#212121' },
                     type: 'line',
                     smooth: true,
                     itemStyle: {
@@ -28,9 +28,9 @@ $(document).ready(function () {
                     }
                 }]
             },
-            xAxis: {data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
+            xAxis: { data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 echart4.resize();
             }, 500);
@@ -42,7 +42,7 @@ $(document).ready(function () {
         let echart5 = echarts.init(echartElem5);
         echart5.setOption({
             ...echartOptions.defaultOptions,
-            ...{
+            ... {
                 legend: {
                     show: true,
                     bottom: 0,
@@ -68,7 +68,7 @@ $(document).ready(function () {
                 }]
             }
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 echart5.resize();
             }, 500);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -246,50 +246,60 @@
         <div class="row mb-4">
             <div class="col-md-12 mb-4">
                 <div class="card text-left">
-
                     <div class="card-body">
+                        <form action="" th:action="@{/save}" th:object="${product}" method="post">
+                            <div class="col-md-6">
+                                <div class="card mb-5">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column">
+                                            <label class="label text-18 ">Name Product: </label>
+                                            <input class="form-control" type="text" th:field="*{name}"/>
+                                            <label class="label text-18">Price: </label>
+                                            <input class="form-control" type="text" th:field="*{price}"/>
+                                            <label class="label text-18"> Description: </label>
+                                            <textarea type="text" th:field="*{description}"/>
+                                            <label class="label text-18 ">In Stock: </label>
+                                            <input class="form-control" type="number" th:field="*{inStock}"/>
+                                            <label class="label text-18 ">Choose Category: </label>
+                                            <div class="form-group">
 
-                        <form action="#" th:action="@{/save}" th:object="${product}"
-                              method="post">
+                                                <select class="form-control selectpicker" th:field="*{category}"
+                                                        id="cate">
+                                                    <option value="">Nothing selected</option>
+                                                    <option th:each="cate : ${category}"
+                                                            th:value="${cate.id}"
+                                                            th:text="${cate.name}">pizza
+                                                    </option>
 
-                            <table border="0" cellpadding="10">
-                                <tr>
-                                    <td>Product Name:</td>
-                                    <td><input type="text" th:field="*{name}" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Price:</td>
-                                    <td><input type="text" th:field="*{price}" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Description:</td>
-                                    <td><textarea type="text" th:field="*{description}" /></td>
-                                </tr>
-                                <tr>
-                                    <td>Price:</td>
-                                    <td><input type="text" th:field="*{inStock}" /></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><button type="submit">Save</button> </td>
-                                </tr>
-                            </table>
+                                                </select>
+                                            </div>
+                                            <br>
+                                            <button type="submit" class="btn btn-outline-primary">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                            <!--                            +================  Image ====================+-->
                         </form>
-
                     </div>
                 </div>
             </div>
-            <!-- end of col -->
-
         </div>
-        <!-- end of row -->
+        <!-- end of col -->
 
-
-        <!-- Footer Start -->
-        <div class="flex-grow-1"></div>
-
-        <!-- fotter end -->
     </div>
-    <!-- ============ Body content End ============= -->
+    <!-- end of row -->
+
+
+    <!-- Footer Start -->
+    <div class="flex-grow-1"></div>
+
+    <!-- fotter end -->
+</div>
+<!-- ============ Body content End ============= -->
 </div>
 <!--=============== End app-admin-wrap ================-->
 

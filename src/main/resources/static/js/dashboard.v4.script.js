@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     $('#user_table').DataTable();
     $('#sales_table').DataTable();
 
@@ -7,7 +7,7 @@ $(document).ready(function () {
         let echart1 = echarts.init(echartElem1);
         echart1.setOption({
             ...echartOptions.defaultOptions,
-            ...{
+            ... {
                 grid: echartOptions.gridAlignLeft,
                 series: [{
                     data: [30, 40, 20, 50, 40, 80, 90, 40],
@@ -22,7 +22,7 @@ $(document).ready(function () {
                 }]
             }
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 echart1.resize();
             }, 500);
@@ -34,7 +34,7 @@ $(document).ready(function () {
         let echart2 = echarts.init(echartElem2);
         echart2.setOption({
             ...echartOptions.defaultOptions,
-            ...{
+            ... {
                 grid: echartOptions.gridAlignLeft,
                 series: [{
                     data: [30, 40, 20, 50, 40, 80, 90, 40],
@@ -49,7 +49,7 @@ $(document).ready(function () {
                 }]
             }
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 echart2.resize();
             }, 500);
@@ -61,7 +61,7 @@ $(document).ready(function () {
         let echart3 = echarts.init(echartElem3);
         echart3.setOption({
             ...echartOptions.lineFullWidth,
-            ...{
+            ... {
                 series: [{
                     data: [80, 40, 90, 20, 80, 30, 90, 30, 80, 10, 70, 30, 90],
                     ...echartOptions.smoothLine,
@@ -103,12 +103,13 @@ $(document).ready(function () {
                 }]
             }
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 echart3.resize();
             }, 500);
         });
     }
+
 
 
 });
