@@ -41,10 +41,10 @@ $(document).ready(function () {
             "visible": false,
             "searchable": false
         },
-        {
-            "targets": [3],
-            "visible": false
-        }
+            {
+                "targets": [3],
+                "visible": false
+            }
         ]
     });
 
@@ -108,4 +108,4 @@ $(document).ready(function () {
         }
     });
 
-})
+});

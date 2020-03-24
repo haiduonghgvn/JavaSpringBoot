@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     //    basic column Chart
 
@@ -52,12 +52,12 @@ $(document).ready(function() {
         },
         tooltip: {
             y: {
-                formatter: function(val) {
+                formatter: function (val) {
                     return "$ " + val + " thousands"
                 }
             }
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#basicColumn-chart"),
@@ -87,7 +87,7 @@ $(document).ready(function() {
         colors: ['#03A9F4'],
         dataLabels: {
             enabled: true,
-            formatter: function(val) {
+            formatter: function (val) {
                 return val + "%";
             },
             offsetY: -20,
@@ -141,7 +141,7 @@ $(document).ready(function() {
             },
             labels: {
                 show: false,
-                formatter: function(val) {
+                formatter: function (val) {
                     return val + "%";
                 }
             }
@@ -156,7 +156,7 @@ $(document).ready(function() {
                 color: '#444'
             }
         },
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#columnDataLabel"),
@@ -216,7 +216,7 @@ $(document).ready(function() {
         fill: {
             opacity: 1
         },
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#stackedColumn"),
@@ -258,7 +258,7 @@ $(document).ready(function() {
             name: 'Cash Flow',
             data: [1.45, 5.42, 5.9, -0.42, -12.6, -18.1, -18.2, -14.16, -11.1, -6.09, 0.34, 3.88, 13.07,
                 5.8, 2, 7.37, 8.1, 13.57, 15.75, 17.1, 19.8, -27.03, -54.4, -47.2, -43.3, -18.6, -
-                48.6, -41.1, -39.6, -37.6, -29.4, -21.4, -2.4
+                    48.6, -41.1, -39.6, -37.6, -29.4, -21.4, -2.4
             ]
         }],
 
@@ -267,7 +267,7 @@ $(document).ready(function() {
                 text: 'Growth',
             },
             labels: {
-                formatter: function(y) {
+                formatter: function (y) {
                     return y.toFixed(0) + "%";
                 }
             }
@@ -288,10 +288,8 @@ $(document).ready(function() {
                 rotate: -90
             }
         },
-        tooltip: {
-
-        }
-    }
+        tooltip: {}
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#negetiveColumn"),
@@ -307,7 +305,7 @@ $(document).ready(function() {
             height: 350,
             type: 'bar',
             events: {
-                click: function(chart, w, e) {
+                click: function (chart, w, e) {
                     console.log(chart, w, e)
                 }
             },
@@ -335,7 +333,7 @@ $(document).ready(function() {
                 }
             }
         }
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#distributedColumnChart"),

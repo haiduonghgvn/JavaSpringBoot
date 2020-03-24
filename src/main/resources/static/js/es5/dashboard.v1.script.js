@@ -1,6 +1,16 @@
 'use strict';
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+        for (var key in source) {
+            if (Object.prototype.hasOwnProperty.call(source, key)) {
+                target[key] = source[key];
+            }
+        }
+    }
+    return target;
+};
 
 $(document).ready(function () {
 
@@ -58,7 +68,7 @@ $(document).ready(function () {
             series: [{
                 name: 'Online',
                 data: [35000, 69000, 22500, 60000, 50000, 50000, 30000, 80000, 70000, 60000, 20000, 30005],
-                label: { show: false, color: '#0168c1' },
+                label: {show: false, color: '#0168c1'},
                 type: 'bar',
                 barGap: 0,
                 color: '#bcbbdd',
@@ -74,7 +84,7 @@ $(document).ready(function () {
             }, {
                 name: 'Offline',
                 data: [45000, 82000, 35000, 93000, 71000, 89000, 49000, 91000, 80200, 86000, 35000, 40050],
-                label: { show: false, color: '#639' },
+                label: {show: false, color: '#639'},
                 type: 'bar',
                 color: '#7569b3',
                 smooth: true,
@@ -111,7 +121,10 @@ $(document).ready(function () {
                 type: 'pie',
                 radius: '60%',
                 center: ['50%', '50%'],
-                data: [{ value: 535, name: 'USA' }, { value: 310, name: 'Brazil' }, { value: 234, name: 'France' }, { value: 155, name: 'BD' }, { value: 130, name: 'UK' }, { value: 348, name: 'India' }],
+                data: [{value: 535, name: 'USA'}, {value: 310, name: 'Brazil'}, {value: 234, name: 'France'}, {value: 155, name: 'BD'}, {
+                    value: 130,
+                    name: 'UK'
+                }, {value: 348, name: 'India'}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -201,7 +214,7 @@ $(document).ready(function () {
                     color: 'rgba(102, 51, 153, 0.8)',
                     width: 3
                 }, echartOptions.lineShadow),
-                label: { show: true, color: '#212121' },
+                label: {show: true, color: '#212121'},
                 type: 'line',
                 smooth: true,
                 itemStyle: {

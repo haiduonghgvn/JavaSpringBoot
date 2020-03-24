@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // simple Pie
     var options = {
         chart: {
@@ -23,7 +23,7 @@ $(document).ready(function() {
                 }
             }
         }]
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#simplePie"),
@@ -53,7 +53,7 @@ $(document).ready(function() {
                 }
             }
         }]
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#simpleDonut"),
@@ -93,7 +93,7 @@ $(document).ready(function() {
                 }
             }
         }]
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#monochromePie"),
@@ -116,7 +116,7 @@ $(document).ready(function() {
             type: 'gradient',
         },
         legend: {
-            formatter: function(val, opts) {
+            formatter: function (val, opts) {
                 return val + " - " + opts.w.globals.series[opts.seriesIndex]
             },
             position: 'bottom'
@@ -134,7 +134,7 @@ $(document).ready(function() {
             }
         }]
 
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#gradientDonut"),
@@ -202,7 +202,7 @@ $(document).ready(function() {
                 }
             }
         }]
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#donutwithPattern"),
@@ -248,7 +248,7 @@ $(document).ready(function() {
                 }
             }
         }]
-    }
+    };
 
     var chart = new ApexCharts(
         document.querySelector("#piewithImage"),

@@ -2,14 +2,12 @@ $(document).ready(function () {
     $('#basic-alert').on('click', function () {
         swal("Here's a message!");
     });
-
     $('#with-title').on('click', function () {
         swal(
             'The Internet?',
             'That thing is still around?'
         );
     });
-
     $('#with-html').on('click', function () {
         swal({
             title: 'HTML <small>Title</small>!',
@@ -19,17 +17,29 @@ $(document).ready(function () {
             confirmButtonClass: 'btn btn-lg btn-primary'
         });
     });
-
     $('#alert-success').on('click', function () {
-        swal({
-            type: 'success',
-            title: 'Success!',
-            text: 'Your work has been saved',
-            buttonsStyling: false,
-            confirmButtonClass: 'btn btn-lg btn-success'
-        })
+        x = document.getElementById("ddlViewBy");
+        z = document.getElementById("blah");
+        d = document.getElementById("validationCustom02");
+        v = document.getElementById("validationCustom01");
+        if (x.value && z.value && d != null && v != null) {
+            swal({
+                type: 'success',
+                title: 'Success!',
+                text: 'Your work has been saved',
+                buttonsStyling: false,
+                confirmButtonClass: 'btn btn-lg btn-success'
+            })
+        } else {
+            swal({
+                type: 'warning',
+                title: 'Warning',
+                text: 'Here is the warning alert text',
+                buttonsStyling: false,
+                confirmButtonClass: 'btn btn-lg btn-warning'
+            })
+        }
     });
-
     $('#alert-info').on('click', function () {
         swal({
             type: 'info',
@@ -39,7 +49,6 @@ $(document).ready(function () {
             confirmButtonClass: 'btn btn-lg btn-info'
         })
     });
-
     $('#alert-warning').on('click', function () {
         swal({
             type: 'warning',
@@ -49,7 +58,6 @@ $(document).ready(function () {
             confirmButtonClass: 'btn btn-lg btn-warning'
         })
     });
-
     $('#alert-error').on('click', function () {
         swal({
             type: 'error',
@@ -60,12 +68,11 @@ $(document).ready(function () {
             confirmButtonClass: 'btn btn-lg btn-danger'
         })
     });
-
     $('#with-image').on('click', function () {
         swal({
             title: 'Sweet!',
             text: 'Modal with a custom image.',
-            imageUrl: 'https://unsplash.it/400/200',
+            imageUrl: 'https://unsplash.it/400/200(16 kB)',
             imageWidth: 400,
             imageHeight: 200,
             imageAlt: 'Custom image',
@@ -73,40 +80,38 @@ $(document).ready(function () {
             confirmButtonClass: 'btn btn-lg btn-primary'
         })
     });
-
-    $('#with-timer').on('click', function () {
-        let timerInterval;
-        swal({
-            title: 'Auto close alert!',
-            html: 'I will close in <strong>2</strong> seconds.',
-            timer: 2000
-        }).then((result) => {
-            if (
-                result.dismiss === swal.DismissReason.timer
-            ) {
-                console.log('I was closed by the timer')
-            }
-        })
-    });
-
+    // $('#with-timer').on('click', function () {
+    //     let timerInterval;
+    //     swal({
+    //         title: 'Auto close alert!',
+    //         html: 'I will close in <strong>2</strong> seconds.',
+    //         timer: 2000
+    //     }).then((result) = > {
+    //         if(
+    //             result.dismiss === swal.DismissReason.timer
+    // )
+    //     {
+    //         console.log('I was closed by the timer')
+    //     }
+    // })
+    // });
     $('#with-input').on('click', function () {
         swal({
-            title: "An input!",
-            text: "Write something:",
+            title: "Deny Reason",
+            text: "Please enter deny reason:",
             input: "text",
             showCancelButton: true,
             closeOnConfirm: false,
-            inputPlaceholder: "Write something"
+            // inputPlaceholder: "Write something"
         }).then(function (inputValue) {
             if (inputValue === false) return false;
             if (inputValue === "") {
-                return false
+                swal("Cancelled", "You must input reason", "error");
+                return false;
             }
             swal("Awesome!", "You wrote: " + inputValue, "success");
         });
-
     });
-
     $('#alert-confirm').on('click', function () {
         swal({
             title: 'Are you sure?',
@@ -137,5 +142,4 @@ $(document).ready(function () {
             }
         })
     });
-
-})
+});

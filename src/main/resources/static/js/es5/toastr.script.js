@@ -13,14 +13,14 @@ $(document).ready(function () {
     }), $("#toast-error").on("click", function () {
         toastr.error("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Inconceivable!");
     }),
-    // top position
-    $("#toast-position-top-left").on("click", function () {
-        toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Top Left!", {
-            positionClass: "toast-top-left",
-            containerId: "toast-top-left",
-            timeOut: "50000"
-        });
-    }), $("#toast-position-top-center").on("click", function () {
+        // top position
+        $("#toast-position-top-left").on("click", function () {
+            toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Top Left!", {
+                positionClass: "toast-top-left",
+                containerId: "toast-top-left",
+                timeOut: "50000"
+            });
+        }), $("#toast-position-top-center").on("click", function () {
         toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Top Center!", {
             positionClass: "toast-top-center",
             containerId: "toast-top-center"
@@ -37,14 +37,14 @@ $(document).ready(function () {
         });
     }),
 
-    // toast bottom position
+        // toast bottom position
 
-    $("#toast-position-bottom-left").on("click", function () {
-        toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Bottom Left!", {
-            positionClass: "toast-bottom-left",
-            containerId: "toast-bottom-left"
-        });
-    }), $("#toast-position-bottom-center").on("click", function () {
+        $("#toast-position-bottom-left").on("click", function () {
+            toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Bottom Left!", {
+                positionClass: "toast-bottom-left",
+                containerId: "toast-bottom-left"
+            });
+        }), $("#toast-position-bottom-center").on("click", function () {
         toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Bottom Center!", {
             positionClass: "toast-bottom-center",
             containerId: "toast-bottom-center"
@@ -75,10 +75,10 @@ $(document).ready(function () {
         toastr.error('Clear itself?<br /><br /><button type="button" class="btn btn-secondary clear">Yes</button>', "Clear Toast Button");
     }),
 
-    // show and remove toaser
-    $("#toast-show-remove").on("click", function () {
-        toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required!", "Miracle Max Says");
-    }), $("#toast-remove").on("click", function () {
+        // show and remove toaser
+        $("#toast-show-remove").on("click", function () {
+            toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required!", "Miracle Max Says");
+        }), $("#toast-remove").on("click", function () {
         toastr.remove();
     }), $("#toast-show-clear").on("click", function () {
         toastr.info("toastr is a Javascript library for non-blocking notifications. jQuery is required!", "Miracle Max Says");
@@ -86,12 +86,12 @@ $(document).ready(function () {
         toastr.clear();
     }),
 
-    // Duration
-    $("#toast-fast-duration").on("click", function () {
-        toastr.success("toastr is a Javascript library for non-blocking notifications. jQuery is required!", "Fast Duration", {
-            showDuration: 500
-        });
-    }), $("#toast-slow-duration").on("click", function () {
+        // Duration
+        $("#toast-fast-duration").on("click", function () {
+            toastr.success("toastr is a Javascript library for non-blocking notifications. jQuery is required!", "Fast Duration", {
+                showDuration: 500
+            });
+        }), $("#toast-slow-duration").on("click", function () {
         toastr.warning("toastr is a Javascript library for non-blocking notifications. jQuery is required!", "Slow Duration", {
             hideDuration: 3000
         });
@@ -105,14 +105,14 @@ $(document).ready(function () {
         });
     }),
 
-    // slideup/fadein/Out
-    $("#toast-slide").on("click", function () {
-        toastr.success("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Slide Down / Slide Up!", {
-            showMethod: "slideDown",
-            hideMethod: "slideUp",
-            timeOut: 2e3
-        });
-    }), $("#toast-fade").on("click", function () {
+        // slideup/fadein/Out
+        $("#toast-slide").on("click", function () {
+            toastr.success("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Slide Down / Slide Up!", {
+                showMethod: "slideDown",
+                hideMethod: "slideUp",
+                timeOut: 2e3
+            });
+        }), $("#toast-fade").on("click", function () {
         toastr.success("toastr is a Javascript library for non-blocking notifications. jQuery is required.", "Slide Down / Slide Up!", {
             showMethod: "fadeIn",
             hideMethod: "fadeOut",

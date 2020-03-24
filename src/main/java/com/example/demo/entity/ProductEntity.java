@@ -9,6 +9,7 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Set;
@@ -24,7 +25,6 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull
     @Column(name = "name")
     private String name;
 
@@ -34,10 +34,10 @@ public class ProductEntity {
     @Column(name = "inStock")
     private int inStock;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "text")
     private String description;
 
-    @Column(name = "comment")
+    @Column(name = "comment",columnDefinition = "text")
     private String comment;
 
     @OneToMany
@@ -48,6 +48,6 @@ public class ProductEntity {
     @JsonIgnore
     private Category category;
 
-    @OneToMany(mappedBy="productEntity")
+    @OneToMany(mappedBy="productEntity",fetch = FetchType.EAGER)
     private Set<Image> images;
 }

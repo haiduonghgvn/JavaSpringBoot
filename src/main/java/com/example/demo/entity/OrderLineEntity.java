@@ -39,13 +39,4 @@ public class OrderLineEntity {
     @Column(name = "purchasePrice")
     private BigDecimal purchasePrice;
 
-//    @OneToOne(mappedBy = "orderLineEntity")
-//    private ProductEntity productEntity;
-
-//
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "orders_id", nullable = false)
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    @JsonIgnore
-//    private OrderEntity orderEntity;
 }

@@ -84,7 +84,7 @@ $(document).ready(function () {
             name: 'Series 3',
             data: randomSeries()
         }]);
-    };
+    }
 
     $('.updateRadar').on('click', function () {
         updateMultiSeries();

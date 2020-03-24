@@ -1,10 +1,10 @@
-$(document).ready(function() {
+$(document).ready(function () {
     /* initialize the external events
             -----------------------------------------------------------------*/
 
 
     function initEvent() {
-        $('#external-events .fc-event').each(function() {
+        $('#external-events .fc-event').each(function () {
 
             // store data so the calendar knows to render an event upon drop
             $(this).data('event', {
@@ -22,6 +22,7 @@ $(document).ready(function() {
 
         });
     }
+
     initEvent();
 
 
@@ -43,7 +44,7 @@ $(document).ready(function() {
         droppable: true,
         editable: true,
         eventLimit: true, // allow "more" link when too many events
-        drop: function() {
+        drop: function () {
             // is the "remove after drop" checkbox checked?
             if ($('#drop-remove').is(':checked')) {
                 // if so, remove the element from the "Draggable Events" list
@@ -109,13 +110,7 @@ $(document).ready(function() {
     });
 
 
-
-
-
-
-
-
-    jQuery(".js-form-add-event").on("submit", function(e) {
+    jQuery(".js-form-add-event").on("submit", function (e) {
         e.preventDefault();
 
         var data = $('#newEvent').val();
