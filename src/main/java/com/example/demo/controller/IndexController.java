@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.websocket.server.PathParam;
 import java.io.File;
 import java.util.List;
@@ -33,18 +34,27 @@ public class IndexController {
         this.customerService = customerService;
     }
 
-//    ======================Image+=================
-@RequestMapping("/image")
-public String index(Model model,@RequestParam(value = "id",required = true) Long id) {
+    @GetMapping("/register")
+    public String register(){
+        return "signup";
+    }
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+    //    ======================Image+=================
+    @RequestMapping("/image")
+    public String index(Model model, HttpServletRequest request) {
 //        model.addAttribute("products",productService.findAll());
-        model.addAttribute("product", new ProductEntity());
-    model.addAttribute("myFile", new MyFile());
-    model.addAttribute("id_product",id);
-    return "addImage";
-}
+        model.addAttribute("product", productService.findAll());
+        model.addAttribute("myFile", new MyFile());
+//        model.addAttribute("id_product", request.getAttribute("id"));
+        return "addImage";
+    }
+
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
-    public String uploadFile(@PathParam(value = "id_product" ) Long id, MyFile myFile, Model model) {
-        Image image =new Image();
+    public String uploadFile(@PathParam(value = "id_product") Long id, MyFile myFile, Model model) {
+        Image image = new Image();
         model.addAttribute("message", "Upload success");
         model.addAttribute("description", myFile.getDescription());
         ProductEntity productEntity = new ProductEntity();
@@ -52,11 +62,10 @@ public String index(Model model,@RequestParam(value = "id",required = true) Long
             MultipartFile multipartFile = myFile.getMultipartFile();
             String fileName = multipartFile.getOriginalFilename();
             File file = new File(this.getFolderUpload(), fileName);
-            multipartFile.transferTo(file);
-
-                    image.setUrl("/Uploads/"+fileName);
-                    image.setProductEntity(productService.findById(id));
-                    imageService.save(image);
+//            multipartFile.transferTo(file);
+//            image.setUrl("/Uploads/" + fileName);
+//            image.setProductEntity(productService.findById(id));
+//            imageService.save(image);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,8 +73,9 @@ public String index(Model model,@RequestParam(value = "id",required = true) Long
         }
         return "result";
     }
+
     public File getFolderUpload() {
-        File folderUpload = new File( "C:Users/Ominous/Documents/JavaSpringBoot/src/main/resources/static/Uploads");
+        File folderUpload = new File("C:Users/Ominous/Documents/JavaSpringBoot/src/main/resources/static/Uploads");
         if (!folderUpload.exists()) {
             folderUpload.mkdirs();
         }
@@ -80,7 +90,7 @@ public String index(Model model,@RequestParam(value = "id",required = true) Long
         return "Customer";
     }
 
-    @GetMapping(value = {"/","/index"})
+    @GetMapping(value = {"/", "/index"})
     public String postProductAll(Model model) {
         List<ProductEntity> p = (List<ProductEntity>) productService.findAll();
         model.addAttribute("products", p);
@@ -100,24 +110,25 @@ public String index(Model model,@RequestParam(value = "id",required = true) Long
     }
 
     @GetMapping("/profile")
-    public String profile(@RequestParam ("id") Long userId, Model model){
+    public String profile(@RequestParam("id") Long userId, Model model) {
         model.addAttribute("profile", customerService.findById(userId));
         return "editCustomer";
     }
 
     @RequestMapping("/news")
     public String showNewProductPage(Model model) {
-        List<Category> listCategory  = categoryService.listCategory();
-        model.addAttribute("category",listCategory);
+        List<Category> listCategory = categoryService.listCategory();
+        model.addAttribute("category", listCategory);
         model.addAttribute("product", new ProductEntity());
         return "addProduct";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String saveProduct(@ModelAttribute("product") ProductEntity product,Model model) {
-        model.addAttribute("productID",product.getId());
+    public String saveProduct(@ModelAttribute("product") ProductEntity product, Model model) {
+        model.addAttribute("productID", product.getId());
         productService.save(product);
-        return "redirect:/image"+product.getId();
+        return "redirect:/index";
+//        return "redirect:/image" + product.getId();
     }
 
 }
