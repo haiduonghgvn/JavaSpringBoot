@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Customer;
+import com.example.demo.model.dto.CustomerDto;
 import com.example.demo.repository.CustomerReponsitory;
+import com.example.demo.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,11 @@ public class CustomerService {
 
     @Autowired
     CustomerReponsitory customerRepo;
+
+    @Autowired
+    RoleRepository roleRepository;
+
+
 //    public List<Customer> getTopProduct(){
 //        List<Customer> customers = new ArrayList<>();
 //        customers = customerRepo.c();
@@ -57,5 +64,20 @@ public class CustomerService {
         }
         return result;
     }
+
+
+    public CustomerDto findUserByName(String userName){
+            Customer customer =customerRepo.findUserByName(userName);
+            CustomerDto customerDto = new CustomerDto();
+            customerDto.setAvatar(customer.getAvatar());
+            customerDto.setEmail(customer.getEmail());
+            customerDto.setPhone(customer.getPhone());
+            customerDto.setName(customer.getName());
+            customerDto.setId(customer.getId());
+            customerDto.setPassword(customer.getPassword());
+            customerDto.setRoleList(roleRepository.findRoleByUserId(customerDto.getId()));
+        return customerDto;
+    }
+
 
 }
