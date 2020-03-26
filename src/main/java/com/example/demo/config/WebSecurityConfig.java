@@ -1,5 +1,5 @@
 package com.example.demo.config;
 
 
-public class WebSecurityConfig extends Websecuri   {
+public class WebSecurityConfig   {
 }
