@@ -16,7 +16,7 @@
 <div class="app-admin-wrap layout-sidebar-large">
     <div class="main-header">
         <div class="logo">
-            <a th:href="@{/index}"> <img th:src="@{../assets/images/logo.png}" alt=""></a>
+            <img src="./assets/images/logo.png" alt="">
         </div>
 
         <div class="menu-toggle">
@@ -169,10 +169,11 @@
         </div>
 
     </div>
+
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
             <ul class="navigation-left">
-                <li class="nav-item">
+                <li class="nav-item" data-item="products">
                     <a class="nav-item-hold" th:href="@{/customer}">
                         <i class="nav-icon i-Find-User"></i>
                         <span class="nav-text underline bold">Customer</span>
@@ -187,13 +188,7 @@
                     </a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-item-hold" th:href="@{/image}">
-                        <i class="nav-icon i-File"></i>
-                        <span class="nav-text underline bold">Images</span>
-                    </a>
-                    <div class="triangle"></div>
-                </li>
+
                 <li class="nav-item" data-item="dashboard">
                     <a class="nav-item-hold" href="#">
                         <i class="nav-icon i-Bar-Chart"></i>
@@ -210,17 +205,17 @@
             <!-- Submenu Dashboards -->
             <ul class="childNav" data-parent="products">
                 <li class="nav-item">
-                    <a th:href="@{/news}" >
+                    <a href="dashboard.v1.html">
                         <i class="nav-icon i-Clock-3"></i>
                         <span class="item-name">Add New Product</span>
                     </a>
                 </li>
-                <!--                <li class="nav-item">-->
-                <!--                    <a th:href="@{/index}">-->
-                <!--                        <i class="nav-icon i-Clock-4"></i>-->
-                <!--                        <span class="item-name">Show All Products</span>-->
-                <!--                    </a>-->
-                <!--                </li>-->
+                <li class="nav-item">
+                    <a href="dashboard.v2.html">
+                        <i class="nav-icon i-Clock-4"></i>
+                        <span class="item-name">Show All Products</span>
+                    </a>
+                </li>
 
             </ul>
 
@@ -289,7 +284,6 @@
                             </div>
                             <!--                            +================  Image ====================+-->
                         </form>
-                    </div>
                     </div>
                 </div>
             </div>

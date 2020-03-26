@@ -1,10 +1,7 @@
 package com.example.demo.entity;
 
-import lombok.Data;
-
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.math.BigDecimal;
+
 public class Cart {
     private long id;
     private String name;

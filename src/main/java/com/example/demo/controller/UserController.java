@@ -1,4 +1,4 @@
-package com.example.demo.controller.api;
+package com.example.demo.controller;
 
 import com.example.demo.entity.Customer;
 import com.example.demo.model.request.DeleteRequest;

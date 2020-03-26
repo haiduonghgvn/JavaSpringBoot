@@ -169,31 +169,26 @@
         </div>
 
     </div>
+
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
             <ul class="navigation-left">
-                <li class="nav-item">
-                    <a class="nav-item-hold" th:href="@{/customer}">
-                        <i class="nav-icon i-Find-User"></i>
-                        <span class="nav-text underline bold">Customer</span>
+                <li class="nav-item" data-item="products">
+                    <a class="nav-item-hold" href="#">
+                        <i class="nav-icon i-Face-Style-2"></i>
+                        <span class=" underline bold">Customer</span>
                     </a>
                     <div class="triangle"></div>
                 </li>
 
                 <li class="nav-item" data-item="products">
-                    <a class="nav-item-hold" href="#">
+                    <a class="nav-item-hold" th:href="@{/index}">
                         <i class="nav-icon i-Safe-Box"></i>
                         <span class="nav-text underline bold">Products</span>
                     </a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-item-hold" th:href="@{/image}">
-                        <i class="nav-icon i-File"></i>
-                        <span class="nav-text underline bold">Images</span>
-                    </a>
-                    <div class="triangle"></div>
-                </li>
+
                 <li class="nav-item" data-item="dashboard">
                     <a class="nav-item-hold" href="#">
                         <i class="nav-icon i-Bar-Chart"></i>
@@ -206,25 +201,6 @@
             </ul>
         </div>
 
-        <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar data-suppress-scroll-x="true">
-            <!-- Submenu Dashboards -->
-            <ul class="childNav" data-parent="products">
-                <li class="nav-item">
-                    <a th:href="@{/news}" >
-                        <i class="nav-icon i-Clock-3"></i>
-                        <span class="item-name">Add New Product</span>
-                    </a>
-                </li>
-                <!--                <li class="nav-item">-->
-                <!--                    <a th:href="@{/index}">-->
-                <!--                        <i class="nav-icon i-Clock-4"></i>-->
-                <!--                        <span class="item-name">Show All Products</span>-->
-                <!--                    </a>-->
-                <!--                </li>-->
-
-            </ul>
-
-        </div>
         <div class="sidebar-overlay"></div>
     </div>
     <!--=============== Left side End ================-->
@@ -259,19 +235,19 @@
                                    style="width:100%">
                                 <thead>
                                 <tr class="bold center" style="font-size: 17px" >
-                                    <th>Avatar</th>
-                                    <th>Email</th>
                                     <th>Name</th>
-                                    <th>Phone</th>
+                                    <th>Desciption</th>
+                                    <th>Price</th>
+                                    <th>InStock</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <th:block th:each="c : ${customers}">
                                     <tr>
-                                        <td th:text="${c.avatar}"></td>
-                                        <td th:text="${c.email}"></td>
+                                        <td th:text="${c.id}"></td>
                                         <td th:text="${c.name}"></td>
+                                        <td th:text="${c.email}"></td>
                                         <td th:text="${c.phone}"></td>
                                         <td style="width: 150px">
                                             <a class="btn-success btn center"th:href="@{profile(id=${c.id})}"><span class="i-Eye-Scan"
@@ -285,10 +261,10 @@
                                 </tbody>
                                 <tfoot>
                                 <tr class="bold center" style="font-size: 17px" >
-                                    <th>Avatar</th>
-                                    <th>Email</th>
                                     <th>Name</th>
-                                    <th>Phone</th>
+                                    <th>Desciption</th>
+                                    <th>Price</th>
+                                    <th>InStock</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>
