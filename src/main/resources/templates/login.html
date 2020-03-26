@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragment/layout}"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>Login Page</title>
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
+<th:block layout:fragment="content">
 <div class="main-content">
     <p th:if="${param.error}" class="error">Invalid email or password</p>
     <p th:if="${param.logout}" class="success">You have been logged out</p>
@@ -16,5 +19,6 @@
         <button type="submit">Login</button> <br />
     </form>
 </div>
+</th:block>
 </body>
 </html>

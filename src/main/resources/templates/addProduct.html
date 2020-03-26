@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{fragments/LayoutAdmin}"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,6 +14,7 @@
 </head>
 
 <body class="text-left">
+<th:block layout:fragment="contentAdmin">
 <div class="app-admin-wrap layout-sidebar-large">
     <div class="main-header">
         <div class="logo">
@@ -442,21 +444,12 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-    </div>
+        </div></div>
+
+</div>
     <!-- ============ Search UI End ============= -->
 
-    <script th:src="@{/js/vendor/jquery-3.3.1.min.js}"></script>
-    <script th:src="@{/js/vendor/bootstrap.bundle.min.js}"></script>
-    <script th:src="@{/js/vendor/perfect-scrollbar.min.js}"></script>
-
-    <!-- page vendor js -->
-    <script th:src="@{/js/vendor/datatables.min.js}"></script>
-    <script th:src="@{/js/es5/script.min.js}"></script>
-    <script th:src="@{/js/es5/sidebar.large.script.min.js}"></script>
-
-    <!-- page custom js -->
-    <script th:src="@{/js/datatables.script.js}"></script>
+</th:block>
 </body>
 
 </html>

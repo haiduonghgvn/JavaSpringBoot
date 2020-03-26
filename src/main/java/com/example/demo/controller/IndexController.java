@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.websocket.server.PathParam;
 import java.io.File;
@@ -19,29 +20,31 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class IndexController {
-    @Autowired
+    final
     ImageService imageService;
-    @Autowired
+    final
     CategoryService categoryService;
     private final
     ProductService productService;
     private final
     CustomerService customerService;
 
-    public IndexController(ProductService productService, CustomerService customerService) {
+    public IndexController(ProductService productService, CustomerService customerService, ImageService imageService, CategoryService categoryService) {
         this.productService = productService;
         this.customerService = customerService;
+        this.imageService = imageService;
+        this.categoryService = categoryService;
     }
 
 //    ======================Image+=================
-@RequestMapping("/image")
-public String index(Model model,@RequestParam(value = "id",required = true) Long id) {
-//        model.addAttribute("products",productService.findAll());
-        model.addAttribute("product", new ProductEntity());
-    model.addAttribute("myFile", new MyFile());
-    model.addAttribute("id_product",id);
-    return "addImage";
-}
+    @RequestMapping("/image")
+    public String index(Model model,@RequestParam(value = "id",required = true) Long id) {
+    //        model.addAttribute("products",productService.findAll());
+        model.addAttribute("product", productService.findAll());
+        model.addAttribute("myFile", new MyFile());
+        model.addAttribute("id_product",id);
+        return "addImage";
+    }
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     public String uploadFile(@PathParam(value = "id_product" ) Long id, MyFile myFile, Model model) {
         Image image =new Image();
@@ -83,7 +86,7 @@ public String index(Model model,@RequestParam(value = "id",required = true) Long
     @GetMapping(value = {"/","/index"})
     public String postProductAll(Model model) {
         List<ProductEntity> p = (List<ProductEntity>) productService.findAll();
-        model.addAttribute("products", p);
+        model.addAttribute("products", productService.findAll());
         return "adminIndex";
     }
 
@@ -119,5 +122,6 @@ public String index(Model model,@RequestParam(value = "id",required = true) Long
         productService.save(product);
         return "redirect:/image"+product.getId();
     }
+
 
 }
