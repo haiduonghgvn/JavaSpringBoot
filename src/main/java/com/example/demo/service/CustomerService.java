@@ -2,18 +2,20 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Customer;
 import com.example.demo.model.dto.CustomerDto;
-import com.example.demo.repository.CustomerReponsitory;
+import com.example.demo.repository.CustomerRepository;
 import com.example.demo.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class CustomerService {
 
     @Autowired
-    CustomerReponsitory customerRepo;
+    CustomerRepository customerRepo;
 
     @Autowired
     RoleRepository roleRepository;
@@ -26,22 +28,25 @@ public class CustomerService {
 //        return customers;
 //    }
 
-    public List<Customer> findAll(){
+    public List<Customer> findAll() {
 
         List<Customer> customers = customerRepo.findAll();
         return customers;
     }
-    public Customer findById(long id){
+
+    public Customer findById(long id) {
         ServiceResult result = new ServiceResult();
         Customer customer = customerRepo.findById(id).orElse(null);
 
         return customer;
     }
+
     public ServiceResult create(Customer customer) {
         ServiceResult result = new ServiceResult();
         result.setData(customerRepo.save(customer));
         return result;
     }
+
     public ServiceResult update(Customer customer) {
         ServiceResult result = new ServiceResult();
         if (!customerRepo.findById(customer.getId()).isPresent()) {
@@ -52,6 +57,7 @@ public class CustomerService {
         }
         return result;
     }
+
     public ServiceResult delete(long id) {
         ServiceResult result = new ServiceResult();
         Customer customer = customerRepo.findById(id).orElse(null);
@@ -66,16 +72,14 @@ public class CustomerService {
     }
 
 
-    public CustomerDto findUserByName(String userName){
-            Customer customer =customerRepo.findUserByName(userName);
-            CustomerDto customerDto = new CustomerDto();
-            customerDto.setAvatar(customer.getAvatar());
-            customerDto.setEmail(customer.getEmail());
-            customerDto.setPhone(customer.getPhone());
-            customerDto.setName(customer.getName());
-            customerDto.setId(customer.getId());
-            customerDto.setPassword(customer.getPassword());
-            customerDto.setRoleList(roleRepository.findRoleByUserId(customerDto.getId()));
+    public CustomerDto findUserByName(String userName) {
+        Customer customer = customerRepo.findByName(userName);
+
+        CustomerDto customerDto = new CustomerDto();
+        customerDto.setName(customer.getName());
+        customerDto.setId(customer.getId());
+        customerDto.setPassword(customer.getPassword());
+        customerDto.setRoleList(roleRepository.findRoleByUserId(customerDto.getId()));
         return customerDto;
     }
 

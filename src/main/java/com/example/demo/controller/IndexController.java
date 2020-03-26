@@ -7,6 +7,7 @@ import com.example.demo.service.ImageService;
 import com.example.demo.service.ProductService;
 import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -20,14 +21,18 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class IndexController {
-    final
+    @Autowired
     ImageService imageService;
-    final
+    @Autowired
     CategoryService categoryService;
-    private final
+    @Autowired
     ProductService productService;
-    private final
+    @Autowired
     CustomerService customerService;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
 
     public IndexController(ProductService productService, CustomerService customerService, ImageService imageService, CategoryService categoryService) {
         this.productService = productService;
@@ -85,6 +90,12 @@ public class IndexController {
 
     @GetMapping(value = {"/","/index"})
     public String postProductAll(Model model) {
+//        Customer customerTemp = new Customer();
+//        customerTemp.setName("daolv");
+//        customerTemp.setPassword(passwordEncoder.encode("123456"));
+//        customerTemp.setEmail("daolv@fpt.edu.vn");
+//        customerTemp.setPhone("1234567856");
+//        customerService.create(customerTemp);
         List<ProductEntity> p = (List<ProductEntity>) productService.findAll();
         model.addAttribute("products", productService.findAll());
         return "adminIndex";
