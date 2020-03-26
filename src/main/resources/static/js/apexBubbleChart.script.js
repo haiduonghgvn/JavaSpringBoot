@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // simple Bubble Chart
 
     /*
@@ -14,8 +14,7 @@ $(document).ready(function () {
         var i = 0;
         var Simpleseries = [];
         while (i < count) {
-            var x = Math.floor(Math.random() * (750 - 1 + 1)) + 1;
-
+            var x = Math.floor(Math.random() * (750 - 1 + 1)) + 1;;
             var y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
             var z = Math.floor(Math.random() * (75 - 15 + 1)) + 15;
 
@@ -39,12 +38,12 @@ $(document).ready(function () {
             enabled: false
         },
         series: [{
-            name: 'Bubble1',
-            data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {
-                min: 10,
-                max: 60
-            })
-        },
+                name: 'Bubble1',
+                data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {
+                    min: 10,
+                    max: 60
+                })
+            },
             {
                 name: 'Bubble2',
                 data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {
@@ -78,7 +77,7 @@ $(document).ready(function () {
         yaxis: {
             max: 70
         }
-    };
+    }
 
     var Simplechart = new ApexCharts(
         document.querySelector("#simpleBubble"),
@@ -122,12 +121,12 @@ $(document).ready(function () {
             enabled: false
         },
         series: [{
-            name: 'Product1',
-            data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {
-                min: 10,
-                max: 60
-            })
-        },
+                name: 'Product1',
+                data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {
+                    min: 10,
+                    max: 60
+                })
+            },
             {
                 name: 'Product2',
                 data: generateData(new Date('11 Feb 2017 GMT').getTime(), 20, {
@@ -168,7 +167,7 @@ $(document).ready(function () {
         theme: {
             palette: 'palette2'
         }
-    };
+    }
 
     var dchart = new ApexCharts(
         document.querySelector("#threeDBubble"),

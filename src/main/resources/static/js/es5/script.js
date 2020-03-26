@@ -90,7 +90,6 @@ $(document).ready(function () {
         }
         return false;
     }
-
     $("[data-fullscreen]").on("click", toggleFullscreen);
 });
 

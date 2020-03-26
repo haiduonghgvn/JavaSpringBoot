@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     // Chart in Dashboard version 1
     let echartElemBar = document.getElementById('echartBar');
@@ -35,45 +35,45 @@ $(document).ready(function () {
                 }
             }],
             yAxis: [{
-                type: 'value',
-                axisLabel: {
-                    formatter: '${value}'
-                },
-                min: 0,
-                max: 100000,
-                interval: 25000,
-                axisLine: {
-                    show: false
-                },
-                splitLine: {
-                    show: true,
-                    interval: 'auto'
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '${value}'
+                    },
+                    min: 0,
+                    max: 100000,
+                    interval: 25000,
+                    axisLine: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: true,
+                        interval: 'auto'
+                    }
                 }
-            }
 
             ],
 
             series: [{
-                name: 'Online',
-                data: [35000, 69000, 22500, 60000, 50000, 50000, 30000, 80000, 70000, 60000, 20000, 30005],
-                label: {show: false, color: '#0168c1'},
-                type: 'bar',
-                barGap: 0,
-                color: '#bcbbdd',
-                smooth: true,
-                itemStyle: {
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowOffsetY: -2,
-                        shadowColor: 'rgba(0, 0, 0, 0.3)'
+                    name: 'Online',
+                    data: [35000, 69000, 22500, 60000, 50000, 50000, 30000, 80000, 70000, 60000, 20000, 30005],
+                    label: { show: false, color: '#0168c1' },
+                    type: 'bar',
+                    barGap: 0,
+                    color: '#bcbbdd',
+                    smooth: true,
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowOffsetY: -2,
+                            shadowColor: 'rgba(0, 0, 0, 0.3)'
+                        }
                     }
-                }
-            },
+                },
                 {
                     name: 'Offline',
                     data: [45000, 82000, 35000, 93000, 71000, 89000, 49000, 91000, 80200, 86000, 35000, 40050],
-                    label: {show: false, color: '#639'},
+                    label: { show: false, color: '#639' },
                     type: 'bar',
                     color: '#7569b3',
                     smooth: true,
@@ -89,7 +89,7 @@ $(document).ready(function () {
 
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 echartBar.resize();
             }, 500);
@@ -108,35 +108,36 @@ $(document).ready(function () {
             },
 
             series: [{
-                name: 'Sales by Country',
-                type: 'pie',
-                radius: '60%',
-                center: ['50%', '50%'],
-                data: [
-                    {value: 535, name: 'USA'},
-                    {value: 310, name: 'Brazil'},
-                    {value: 234, name: 'France'},
-                    {value: 155, name: 'BD'},
-                    {value: 130, name: 'UK'},
-                    {value: 348, name: 'India'}
-                ],
-                itemStyle: {
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    name: 'Sales by Country',
+                    type: 'pie',
+                    radius: '60%',
+                    center: ['50%', '50%'],
+                    data: [
+                        { value: 535, name: 'USA' },
+                        { value: 310, name: 'Brazil' },
+                        { value: 234, name: 'France' },
+                        { value: 155, name: 'BD' },
+                        { value: 130, name: 'UK' },
+                        { value: 348, name: 'India' }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
                     }
                 }
-            }
 
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 echartPie.resize();
             }, 500);
         });
     }
+
 
 
     // line charts
@@ -188,16 +189,16 @@ $(document).ready(function () {
                 }
             },
             series: [{
-                data: [400, 800, 325, 900, 700, 800, 400, 900, 800, 800, 300, 405, 500, 1100, 900, 1450, 1200, 1350, 1200, 1400, 1000, 800, 950, 705, 690, 921, 1020, 903, 852, 630],
-                type: 'line',
-                showSymbol: true,
-                smooth: true,
-                color: '#639',
-                lineStyle: {
-                    opacity: 1,
-                    width: 2,
+                    data: [400, 800, 325, 900, 700, 800, 400, 900, 800, 800, 300, 405, 500, 1100, 900, 1450, 1200, 1350, 1200, 1400, 1000, 800, 950, 705, 690, 921, 1020, 903, 852, 630],
+                    type: 'line',
+                    showSymbol: true,
+                    smooth: true,
+                    color: '#639',
+                    lineStyle: {
+                        opacity: 1,
+                        width: 2,
+                    },
                 },
-            },
                 // {
                 //     data: [100, 400, 225, 800, 550, 860, 300, 400, 1200, 200, 1300, 1405, 900, 500, 1100, 850, 1200, 1150, 1200, 500, 800, 400, 750, 905, 690, 921, 1020, 903, 852, 630],
                 //     type: 'line',
@@ -210,7 +211,7 @@ $(document).ready(function () {
                 // }
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 basicLine.resize();
             }, 500);
@@ -259,22 +260,22 @@ $(document).ready(function () {
                 },
             },
             series: [{
-                name: 'Alpha',
-                data: [70, 65, 85, 75, 95, 86, 93],
-                type: 'line',
-                smooth: true,
-                symbolSize: 8,
-                lineStyle: {
-                    color: '#ff5721',
-                    opacity: 1,
-                    width: 1.5,
+                    name: 'Alpha',
+                    data: [70, 65, 85, 75, 95, 86, 93],
+                    type: 'line',
+                    smooth: true,
+                    symbolSize: 8,
+                    lineStyle: {
+                        color: '#ff5721',
+                        opacity: 1,
+                        width: 1.5,
+                    },
+                    itemStyle: {
+                        color: '#fff',
+                        borderColor: '#ff5721',
+                        borderWidth: 1.5
+                    }
                 },
-                itemStyle: {
-                    color: '#fff',
-                    borderColor: '#ff5721',
-                    borderWidth: 1.5
-                }
-            },
                 {
                     name: 'Beta',
                     data: [80, 90, 75, 104, 75, 80, 70],
@@ -311,7 +312,7 @@ $(document).ready(function () {
                 }
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 multiLine.resize();
             }, 500);
@@ -371,7 +372,7 @@ $(document).ready(function () {
                 smooth: true
             }]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 basicBar.resize();
             }, 500);
@@ -424,39 +425,39 @@ $(document).ready(function () {
                 }
             }],
             yAxis: [{
-                type: 'value',
-                axisLabel: {
-                    formatter: '${value}'
-                },
-                min: 0,
-                max: 100000,
-                interval: 25000,
-                axisLine: {
-                    show: false
-                },
-                splitLine: {
-                    show: true,
-                    interval: 'auto'
-                },
-                axisTick: {
-                    show: false,
-                    color: '#eee'
-                },
-            }
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '${value}'
+                    },
+                    min: 0,
+                    max: 100000,
+                    interval: 25000,
+                    axisLine: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: true,
+                        interval: 'auto'
+                    },
+                    axisTick: {
+                        show: false,
+                        color: '#eee'
+                    },
+                }
 
             ],
 
             series: [{
-                name: 'Series 1',
-                data: [35000, 69000, 22500, 60000, 50000, 50000, 30000, 80000, 70000, 60000, 20000, 30005],
-                label: {
-                    show: false,
-                    color: '#0168c1'
+                    name: 'Series 1',
+                    data: [35000, 69000, 22500, 60000, 50000, 50000, 30000, 80000, 70000, 60000, 20000, 30005],
+                    label: {
+                        show: false,
+                        color: '#0168c1'
+                    },
+                    type: 'bar',
+                    barGap: 0,
+                    smooth: true
                 },
-                type: 'bar',
-                barGap: 0,
-                smooth: true
-            },
                 {
                     name: 'Series 2',
                     data: [45000, 82000, 35000, 93000, 71000, 89000, 49000, 91000, 80200, 86000, 35000, 40050],
@@ -470,7 +471,7 @@ $(document).ready(function () {
             ]
 
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 multipleBar.resize();
             }, 500);
@@ -566,31 +567,31 @@ $(document).ready(function () {
                 }
             },
             series: [{
-                color: '#3182bd',
-                name: 'Campaign',
-                type: 'bar',
-                barGap: 0,
-                label: {
-                    normal: {
-                        show: false,
-                        position: 'insideBottom',
-                        distance: 5,
-                        align: 'left',
-                        verticalAlign: 'middle',
-                        rotate: 90,
-                        formatter: '{c}  {name|{a}}',
-                        fontSize: 14,
-                        fontWeight: 'bold',
-                        rich: {
-                            name: {
-                                color: '#fff',
+                    color: '#3182bd',
+                    name: 'Campaign',
+                    type: 'bar',
+                    barGap: 0,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'insideBottom',
+                            distance: 5,
+                            align: 'left',
+                            verticalAlign: 'middle',
+                            rotate: 90,
+                            formatter: '{c}  {name|{a}}',
+                            fontSize: 14,
+                            fontWeight: 'bold',
+                            rich: {
+                                name: {
+                                    color: '#fff',
 
+                                }
                             }
                         }
-                    }
+                    },
+                    data: [320, 332, 301, 334, 390, 350, 215]
                 },
-                data: [320, 332, 301, 334, 390, 350, 215]
-            },
                 {
                     color: '#74c475',
                     name: 'Steppe',
@@ -669,7 +670,7 @@ $(document).ready(function () {
 
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 multipleBar2.resize();
             }, 500);
@@ -734,18 +735,18 @@ $(document).ready(function () {
                 type: 'inside'
             }],
             series: [{ // For shadow
-                name: 'Interested',
-                type: 'bar',
-                itemStyle: {
-                    normal: {
-                        color: 'rgba(0,0,0,0.05)'
-                    }
+                    name: 'Interested',
+                    type: 'bar',
+                    itemStyle: {
+                        normal: {
+                            color: 'rgba(0,0,0,0.05)'
+                        }
+                    },
+                    barGap: '-100%',
+                    barCategoryGap: '40%',
+                    data: [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500],
+                    animation: false
                 },
-                barGap: '-100%',
-                barCategoryGap: '40%',
-                data: [500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500],
-                animation: false
-            },
                 {
                     name: 'Going',
                     type: 'bar',
@@ -753,9 +754,9 @@ $(document).ready(function () {
                         normal: {
                             color: new echarts.graphic.LinearGradient(
                                 0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: '#83bff6'
-                                },
+                                        offset: 0,
+                                        color: '#83bff6'
+                                    },
                                     {
                                         offset: 0.5,
                                         color: '#188df0'
@@ -770,9 +771,9 @@ $(document).ready(function () {
                         emphasis: {
                             color: new echarts.graphic.LinearGradient(
                                 0, 0, 0, 1, [{
-                                    offset: 0,
-                                    color: '#2378f7'
-                                },
+                                        offset: 0,
+                                        color: '#2378f7'
+                                    },
                                     {
                                         offset: 0.7,
                                         color: '#2378f7'
@@ -789,7 +790,7 @@ $(document).ready(function () {
                 }
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 zoomBar.resize();
             }, 500);
@@ -816,80 +817,80 @@ $(document).ready(function () {
             },
             xAxis: [{
 
-                axisLine: {
-                    show: false
-                },
-                splitLine: {
-                    show: false
+                    axisLine: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: false
+                    }
                 }
-            }
 
             ],
             yAxis: [{
 
-                axisLine: {
-                    show: false
-                },
-                splitLine: {
-                    show: false
+                    axisLine: {
+                        show: false
+                    },
+                    splitLine: {
+                        show: false
+                    }
                 }
-            }
 
             ],
 
             series: [{
-                name: 'Sessions',
-                type: 'pie',
-                radius: ['50%', '85%'],
-                center: ['50%', '50%'],
-                avoidLabelOverlap: false,
-                hoverOffset: 5,
-                label: {
-                    normal: {
-                        show: false,
-                        position: 'center',
-                        textStyle: {
-                            fontSize: '13',
-                            fontWeight: 'normal'
+                    name: 'Sessions',
+                    type: 'pie',
+                    radius: ['50%', '85%'],
+                    center: ['50%', '50%'],
+                    avoidLabelOverlap: false,
+                    hoverOffset: 5,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center',
+                            textStyle: {
+                                fontSize: '13',
+                                fontWeight: 'normal'
+                            },
+                            formatter: "{a}",
                         },
-                        formatter: "{a}",
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '15',
+                                fontWeight: 'bold'
+                            },
+                            formatter: "{b} \n{c} ({d}%)",
+                        }
                     },
-                    emphasis: {
-                        show: true,
-                        textStyle: {
-                            fontSize: '15',
-                            fontWeight: 'bold'
-                        },
-                        formatter: "{b} \n{c} ({d}%)",
-                    }
-                },
-                labelLine: {
-                    normal: {
-                        show: false
-                    }
-                },
-                data: [
-                    {value: 335, name: 'Organic'},
-                    {value: 310, name: 'Search Eng.'},
-                    {value: 234, name: 'Email'},
-                    {value: 135, name: 'Referal'},
-                    {value: 148, name: 'Social'},
-                    {value: 548, name: 'Others'}
-                ],
-                itemStyle: {
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [
+                        { value: 335, name: 'Organic' },
+                        { value: 310, name: 'Search Eng.' },
+                        { value: 234, name: 'Email' },
+                        { value: 135, name: 'Referal' },
+                        { value: 148, name: 'Social' },
+                        { value: 548, name: 'Others' }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
                     }
                 }
-            }
 
             ]
 
 
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 basicDoughnut.resize();
             }, 500);
@@ -1026,7 +1027,7 @@ $(document).ready(function () {
                 }
             }]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 basicArea.resize();
             }, 500);
@@ -1120,48 +1121,48 @@ $(document).ready(function () {
                 }
             },
             series: [{
-                name: 'Visit',
-                type: 'line',
-                smooth: true,
-                data: [140, 135, 95, 115, 95, 126, 93, 145, 115,
-                    140, 135, 95, 115, 95, 126, 125, 145, 115, 140,
-                    135, 95, 115, 95, 126, 93, 145, 115, 140, 135, 95
-                ],
-                symbolSize: 8,
-                showSymbol: false,
-                lineStyle: {
-                    color: 'rgb(255, 87, 33)',
-                    opacity: 1,
-                    width: 1.5,
-                },
-                itemStyle: {
-                    show: false,
-                    color: '#ff5721',
-                    borderColor: '#ff5721',
-                    borderWidth: 1.5
-                },
-                areaStyle: {
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0,
-                                color: 'rgba(255, 87, 33, 1)'
-                            }, {
-                                offset: 0.3,
-                                color: 'rgba(255, 87, 33, 0.7)'
-                            }, {
-                                offset: 1,
-                                color: 'rgba(255, 87, 33, 0)'
-                            }]
+                    name: 'Visit',
+                    type: 'line',
+                    smooth: true,
+                    data: [140, 135, 95, 115, 95, 126, 93, 145, 115,
+                        140, 135, 95, 115, 95, 126, 125, 145, 115, 140,
+                        135, 95, 115, 95, 126, 93, 145, 115, 140, 135, 95
+                    ],
+                    symbolSize: 8,
+                    showSymbol: false,
+                    lineStyle: {
+                        color: 'rgb(255, 87, 33)',
+                        opacity: 1,
+                        width: 1.5,
+                    },
+                    itemStyle: {
+                        show: false,
+                        color: '#ff5721',
+                        borderColor: '#ff5721',
+                        borderWidth: 1.5
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(255, 87, 33, 1)'
+                                }, {
+                                    offset: 0.3,
+                                    color: 'rgba(255, 87, 33, 0.7)'
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(255, 87, 33, 0)'
+                                }]
+                            }
                         }
                     }
-                }
-            },
+                },
                 {
                     name: 'Sales',
                     type: 'line',
@@ -1206,7 +1207,7 @@ $(document).ready(function () {
                 },
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 stackedArea.resize();
             }, 500);
@@ -1301,46 +1302,46 @@ $(document).ready(function () {
                 }
             },
             series: [{
-                name: 'Impression',
-                type: 'line',
-                smooth: true,
-                data: [140, 135, 95, 115, 95, 126, 93, 145, 115,
-                    140, 135, 95, 115, 95, 126, 125, 145, 115, 140,
-                    135, 95, 115, 95, 126, 93, 145, 115, 140, 135, 95
-                ],
-                symbolSize: 8,
-                lineStyle: {
-                    color: 'rgb(255, 87, 33)',
-                    opacity: 1,
-                    width: 1.5,
-                },
-                itemStyle: {
-                    color: '#ff5721',
-                    borderColor: '#ff5721',
-                    borderWidth: 1.5
-                },
-                areaStyle: {
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0,
-                                color: 'rgba(255, 87, 33, 1)'
-                            }, {
-                                offset: 0.3,
-                                color: 'rgba(255, 87, 33, 0.7)'
-                            }, {
-                                offset: 1,
-                                color: 'rgba(255, 87, 33, 0)'
-                            }]
+                    name: 'Impression',
+                    type: 'line',
+                    smooth: true,
+                    data: [140, 135, 95, 115, 95, 126, 93, 145, 115,
+                        140, 135, 95, 115, 95, 126, 125, 145, 115, 140,
+                        135, 95, 115, 95, 126, 93, 145, 115, 140, 135, 95
+                    ],
+                    symbolSize: 8,
+                    lineStyle: {
+                        color: 'rgb(255, 87, 33)',
+                        opacity: 1,
+                        width: 1.5,
+                    },
+                    itemStyle: {
+                        color: '#ff5721',
+                        borderColor: '#ff5721',
+                        borderWidth: 1.5
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(255, 87, 33, 1)'
+                                }, {
+                                    offset: 0.3,
+                                    color: 'rgba(255, 87, 33, 0.7)'
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(255, 87, 33, 0)'
+                                }]
+                            }
                         }
                     }
-                }
-            },
+                },
                 {
                     name: 'Clicks',
                     type: 'line',
@@ -1384,7 +1385,7 @@ $(document).ready(function () {
                 },
             ]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 stackedPointerArea.resize();
             }, 500);
@@ -1468,7 +1469,7 @@ $(document).ready(function () {
                 }
             }]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 solidArea.resize();
             }, 500);
@@ -1506,48 +1507,48 @@ $(document).ready(function () {
             }],
 
             series: [{
-                name: 'Sales by Countries',
-                type: 'pie',
-                radius: '75%',
-                center: ['50%', '50%'],
-                data: [{
-                    value: 335,
-                    name: 'USA'
-                },
-                    {
-                        value: 310,
-                        name: 'CANADA'
-                    },
-                    {
-                        value: 234,
-                        name: 'MEXICO'
-                    },
-                    {
-                        value: 135,
-                        name: 'UK'
-                    },
-                    {
-                        value: 148,
-                        name: 'AUSTRALIA'
-                    },
-                    {
-                        value: 548,
-                        name: 'INDIA'
-                    }
-                ],
-                itemStyle: {
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    name: 'Sales by Countries',
+                    type: 'pie',
+                    radius: '75%',
+                    center: ['50%', '50%'],
+                    data: [{
+                            value: 335,
+                            name: 'USA'
+                        },
+                        {
+                            value: 310,
+                            name: 'CANADA'
+                        },
+                        {
+                            value: 234,
+                            name: 'MEXICO'
+                        },
+                        {
+                            value: 135,
+                            name: 'UK'
+                        },
+                        {
+                            value: 148,
+                            name: 'AUSTRALIA'
+                        },
+                        {
+                            value: 548,
+                            name: 'INDIA'
+                        }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
                     }
                 }
-            }
 
             ]
 
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 basicPie.resize();
             }, 500);
@@ -1586,9 +1587,9 @@ $(document).ready(function () {
                 radius: '85%',
                 center: ['50%', '50%'],
                 data: [{
-                    value: 335,
-                    name: 'Direct Interview'
-                },
+                        value: 335,
+                        name: 'Direct Interview'
+                    },
                     {
                         value: 310,
                         name: 'Email Marketing'
@@ -1605,7 +1606,7 @@ $(document).ready(function () {
                         value: 400,
                         name: 'Search Engine'
                     }
-                ].sort(function (a, b) {
+                ].sort(function(a, b) {
                     return a.value - b.value;
                 }),
                 roseType: 'radius',
@@ -1636,12 +1637,12 @@ $(document).ready(function () {
 
                 animationType: 'scale',
                 animationEasing: 'elasticOut',
-                animationDelay: function (idx) {
+                animationDelay: function(idx) {
                     return Math.random() * 200;
                 }
             }]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 stackedPie.resize();
             }, 500);
@@ -1739,13 +1740,13 @@ $(document).ready(function () {
                 name: '1990',
                 data: data[0],
                 type: 'scatter',
-                symbolSize: function (data) {
+                symbolSize: function(data) {
                     return Math.sqrt(data[2]) / 5e2;
                 },
                 label: {
                     emphasis: {
                         show: true,
-                        formatter: function (param) {
+                        formatter: function(param) {
                             return param.data[3];
                         },
                         position: 'top'
@@ -1769,13 +1770,13 @@ $(document).ready(function () {
                 name: '2015',
                 data: data[1],
                 type: 'scatter',
-                symbolSize: function (data) {
+                symbolSize: function(data) {
                     return Math.sqrt(data[2]) / 5e2;
                 },
                 label: {
                     emphasis: {
                         show: true,
-                        formatter: function (param) {
+                        formatter: function(param) {
                             return param.data[3];
                         },
                         position: 'top'
@@ -1797,12 +1798,13 @@ $(document).ready(function () {
                 }
             }]
         });
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 bubbleChart.resize();
             }, 500);
         });
     }
+
 
 
     // gauge charts
@@ -1847,11 +1849,11 @@ $(document).ready(function () {
             option
 
         });
-        setInterval(function () {
+        setInterval(function() {
             option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
             gaugeChart.setOption(option, true);
         }, 2000);
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
             setTimeout(() => {
                 gaugeChart.resize();
             }, 500);

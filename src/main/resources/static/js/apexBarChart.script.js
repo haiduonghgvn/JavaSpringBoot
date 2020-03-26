@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     // basic Bar Chart
     var options = {
@@ -21,7 +21,7 @@ $(document).ready(function () {
         xaxis: {
             categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan', 'United States', 'China', 'Germany'],
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#basicBar-chart"),
@@ -71,7 +71,7 @@ $(document).ready(function () {
             categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
         },
 
-    };
+    }
 
 
     var chart = new ApexCharts(
@@ -120,7 +120,7 @@ $(document).ready(function () {
         xaxis: {
             categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
             labels: {
-                formatter: function (val) {
+                formatter: function(val) {
                     return val + "K"
                 }
             }
@@ -133,7 +133,7 @@ $(document).ready(function () {
         },
         tooltip: {
             y: {
-                formatter: function (val) {
+                formatter: function(val) {
                     return val + "K"
                 }
             }
@@ -148,7 +148,7 @@ $(document).ready(function () {
             horizontalAlign: 'left',
             offsetX: 40
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#stackedBar"),
@@ -184,9 +184,9 @@ $(document).ready(function () {
             colors: ["#fff"]
         },
         series: [{
-            name: 'Males',
-            data: [0.4, 0.65, 0.76, 0.88, 1.5, 2.1, 2.9, 3.8, 3.9, 4.2, 4, 4.3, 4.1, 4.2, 4.5, 3.9, 3.5, 3]
-        },
+                name: 'Males',
+                data: [0.4, 0.65, 0.76, 0.88, 1.5, 2.1, 2.9, 3.8, 3.9, 4.2, 4, 4.3, 4.1, 4.2, 4.5, 3.9, 3.5, 3]
+            },
             {
                 name: 'Females',
                 data: [-0.8, -1.05, -1.06, -1.18, -1.4, -2.2, -2.85, -3.7, -3.96, -4.22, -4.3, -4.4, -4.1, -4, -4.1, -3.4, -3.1, -2.8]
@@ -207,12 +207,12 @@ $(document).ready(function () {
         tooltip: {
             shared: false,
             x: {
-                formatter: function (val) {
+                formatter: function(val) {
                     return val
                 }
             },
             y: {
-                formatter: function (val) {
+                formatter: function(val) {
                     return Math.abs(val) + "%"
                 }
             }
@@ -224,12 +224,12 @@ $(document).ready(function () {
                 text: 'Percent'
             },
             labels: {
-                formatter: function (val) {
+                formatter: function(val) {
                     return Math.abs(Math.round(val)) + "%"
                 }
             }
         },
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#negetiveBar"),
@@ -264,7 +264,7 @@ $(document).ready(function () {
             style: {
                 colors: ['#fff']
             },
-            formatter: function (val, opt) {
+            formatter: function(val, opt) {
                 return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
             },
             offsetX: 0,
@@ -303,13 +303,13 @@ $(document).ready(function () {
             },
             y: {
                 title: {
-                    formatter: function () {
+                    formatter: function() {
                         return ''
                     }
                 }
             }
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#customDatalabelBar"),
@@ -372,7 +372,7 @@ $(document).ready(function () {
         tooltip: {
             shared: false,
             y: {
-                formatter: function (val) {
+                formatter: function(val) {
                     return val + "K"
                 }
             }
@@ -395,7 +395,7 @@ $(document).ready(function () {
             position: 'top',
             offsetY: 0
         }
-    };
+    }
 
     var chart = new ApexCharts(
         document.querySelector("#PatternedBar"),

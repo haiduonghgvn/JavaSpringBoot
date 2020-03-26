@@ -7,10 +7,11 @@ import com.example.demo.repository.ImageRepository;
 import com.example.demo.repository.ProductReponsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Transactional
 @Service
 public class ProductService {
 
@@ -50,6 +51,11 @@ public class ProductService {
         ProductEntity productEntity = productReponsitory.findById(id).orElse(null);
 
         return productEntity;
+    }
+    public ServiceResult save(ProductEntity productEntity){
+        ServiceResult result = new ServiceResult();
+        result.setData(productReponsitory.save(productEntity));
+        return result;
     }
 
     public ServiceResult create(ProductEntity productEntity) {

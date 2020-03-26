@@ -22,7 +22,6 @@ $(document).ready(function () {
             });
         });
     }
-
     initEvent();
 
     /* initialize the calendar

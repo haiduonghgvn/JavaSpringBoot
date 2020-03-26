@@ -630,6 +630,7 @@ $(document).ready(function () {
     });
 
 
+
     var verticalSlider_connectlower3 = document.getElementById('slider-vertical-connect-lower-3');
 
     noUiSlider.create(verticalSlider_connectlower3, {

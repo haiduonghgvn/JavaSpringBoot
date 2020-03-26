@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     "use strict";
     var $searchInput = $(".search-bar input");
     var $searchCloseBtn = $(".search-close");
@@ -8,7 +8,7 @@ $(document).ready(function () {
         isMobile: function isMobile() {
             return window && window.matchMedia("(max-width: 767px)").matches;
         },
-        changeCssLink: function (storageKey, fileUrl) {
+        changeCssLink: function(storageKey, fileUrl) {
             localStorage.setItem(storageKey, fileUrl);
             location.reload();
         }
@@ -16,10 +16,10 @@ $(document).ready(function () {
 
     // Search toggle
     var $searchUI = $(".search-ui");
-    $searchInput.on("focus", function () {
+    $searchInput.on("focus", function() {
         $searchUI.addClass("open");
     });
-    $searchCloseBtn.on("click", function () {
+    $searchCloseBtn.on("click", function() {
         $searchUI.removeClass("open");
     });
 
@@ -27,7 +27,7 @@ $(document).ready(function () {
     var $dropdown = $(".dropdown-sidemenu");
     var $subMenu = $(".submenu");
 
-    $dropdown.find("> a").on("click", function (e) {
+    $dropdown.find("> a").on("click", function(e) {
         e.preventDefault();
         e.stopPropagation();
         var $parent = $(this).parent(".dropdown-sidemenu");
@@ -38,7 +38,7 @@ $(document).ready(function () {
     });
 
     // Perfect scrollbar
-    $(".perfect-scrollbar, [data-perfect-scrollbar]").each(function (index) {
+    $(".perfect-scrollbar, [data-perfect-scrollbar]").each(function(index) {
         var $el = $(this);
         var ps = new PerfectScrollbar(this, {
             suppressScrollX: $el.data("suppress-scroll-x"),
@@ -99,7 +99,6 @@ $(document).ready(function () {
         }
         return false;
     }
-
     $("[data-fullscreen]").on("click", toggleFullscreen);
 });
 
@@ -111,7 +110,7 @@ $(document).ready(function () {
 // });
 
 // makes sure the whole site is loaded
-$(window).on("load", function () {
+$(window).on("load", function() {
     // will first fade out the loading animation
     jQuery("#loader").fadeOut();
     // will fade out the whole DIV that covers the website.

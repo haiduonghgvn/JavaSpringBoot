@@ -1,13 +1,13 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // var chart = tui.chart;
     //    basic bar chart 
     var container = document.getElementById('basicBarChart');
     var data = {
         categories: ['June', 'July', 'Aug', 'Sep', 'Oct', 'Nov'],
         series: [{
-            name: 'Budget',
-            data: [5000, 3000, 5000, 7000, 6000, 4000]
-        },
+                name: 'Budget',
+                data: [5000, 3000, 5000, 7000, 6000, 4000]
+            },
             {
                 name: 'Income',
                 data: [8000, 1000, 7000, 2000, 5000, 3000]
@@ -56,9 +56,9 @@ $(document).ready(function () {
     var data = {
         categories: ['May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         series: [{
-            name: 'Budget',
-            data: [4000, 5000, 3000, 5000, 7000, 6000, 4000, 1000]
-        },
+                name: 'Budget',
+                data: [4000, 5000, 3000, 5000, 7000, 6000, 4000, 1000]
+            },
             {
                 name: 'Income',
                 data: [7000, 8000, 1000, 7000, 2000, 7000, 3000, 5000]
@@ -103,6 +103,27 @@ $(document).ready(function () {
     options.theme = 'myTheme';
 
     tui.chart.barChart(container, data, options);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 });

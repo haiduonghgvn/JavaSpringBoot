@@ -1,9 +1,9 @@
-$(document).ready(function () {
+$(document).ready(function() {
     Dropzone.options.singleFileUpload = {
         paramName: "file", // The name that will be used to transfer the file
         maxFiles: 1,
-        init: function () {
-            this.on("maxfilesexceeded", function (file) {
+        init: function() {
+            this.on("maxfilesexceeded", function(file) {
                 this.removeAllFiles();
                 this.addFile(file);
             });
@@ -31,14 +31,14 @@ $(document).ready(function () {
         maxFilesize: 1, // MB
         maxFiles: 4,
         maxThumbnailFilesize: 1, // MB
-    };
+    }
 
     // accepted files
     Dropzone.options.fileAcceptedUpload = {
         paramName: "file", // The name that will be used to transfer the file
         maxFilesize: 1, // MB
         acceptedFiles: 'image/*'
-    };
+    }
 
     // remove thumbnail
     Dropzone.options.fileRemoveThumbnailUpload = {

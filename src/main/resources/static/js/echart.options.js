@@ -32,8 +32,8 @@ var echartOptions = {
     },
     get pieLabelOff() {
         return {
-            label: {show: false},
-            labelLine: {show: false, emphasis: {show: false}},
+            label: { show: false },
+            labelLine: { show: false, emphasis: { show: false } },
         }
     },
     get pieLabelCenterHover() {
@@ -159,4 +159,4 @@ var echartOptions = {
             }
         }
     }
-};
+}

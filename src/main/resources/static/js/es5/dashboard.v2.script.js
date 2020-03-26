@@ -1,16 +1,6 @@
 'use strict';
 
-var _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
-        for (var key in source) {
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-                target[key] = source[key];
-            }
-        }
-    }
-    return target;
-};
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 $(document).ready(function () {
 
@@ -32,7 +22,7 @@ $(document).ready(function () {
                     shadowOffsetY: 8,
                     shadowBlur: 10
                 },
-                label: {show: true, color: '#212121'},
+                label: { show: true, color: '#212121' },
                 type: 'line',
                 smooth: true,
                 itemStyle: {
@@ -40,7 +30,7 @@ $(document).ready(function () {
                 }
             }]
         }, {
-            xAxis: {data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']}
+            xAxis: { data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }
         }));
         $(window).on('resize', function () {
             setTimeout(function () {
