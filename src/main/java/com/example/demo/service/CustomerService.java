@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Customer;
+import com.example.demo.entity.Role;
 import com.example.demo.model.dto.CustomerDto;
 import com.example.demo.repository.CustomerRepository;
 import com.example.demo.repository.RoleRepository;
@@ -8,7 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -47,6 +52,7 @@ public class CustomerService {
         return result;
     }
 
+
     public ServiceResult update(Customer customer) {
         ServiceResult result = new ServiceResult();
         if (!customerRepo.findById(customer.getId()).isPresent()) {
@@ -84,4 +90,13 @@ public class CustomerService {
     }
 
 
+    public ServiceResult registerNormalUser(Customer user) {
+
+        List<Role> roleList = new ArrayList<>();
+        roleList.add(roleRepository.findByName("user") );
+        Set set = new HashSet(roleList);
+        user.setRoles(set);
+        return create(user);
+
+    }
 }
